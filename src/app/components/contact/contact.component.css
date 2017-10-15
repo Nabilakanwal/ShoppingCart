@@ -1,0 +1,39 @@
+md-grid-tile {
+  background: salmon;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.map_container{
+  border: 2px solid darkred;
+}
+
+.contactForm_container{
+  border: 2px solid yellow;
+}
+
+.content_container{
+  border: 2px solid greenyellow;
+  
+}
+
+.setStyle{
+  position: absolute;
+}
+
+.contact-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.maps{
+  background-color: #607D8B;
+}

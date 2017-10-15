@@ -1,0 +1,147 @@
+/*mat-toolbar{
+    background-color:mediumaquamarine;
+    background: radial-gradient(circle, black, white);
+    border: 0.5px solid #b7b5b5;
+}
+
+
+
+.logo-img{
+  width: 90px;
+  margin-right: 30px;
+}
+
+.menuButtons{
+    
+}
+
+.menuButtons > mat-button-toggle{
+    text-align: center;
+    width: 25%;
+}*/
+
+.headerBox{
+    background: #2b2e34;
+}
+
+topHeaderContainer mat-toolbar{
+    background: #2b2e34 !important;
+    height: 27px;
+}
+
+.topHeaderContainer{
+    width: 100%;
+    background: #2b2e34 !important;
+    color: #FFF;
+    vertical-align: middle;
+    /*border: 3px solid red;*/
+}
+#sampleSearchInput{
+    background: #25262b;
+    border: none;
+    color: #FFF;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 15px;
+    height: 30px
+}
+
+/*.searchContainer i{
+        top: 2px;
+}*/
+
+span input i{
+    color: #FFF;
+}
+
+.topHeaderContainer .mat-toolbar{
+    background: #2b2e34 !important;
+    color: #FFF;
+}
+.siteHeader {
+  padding-top: 30px;
+  border-bottom-color: grey;
+  /*border: 3px solid red;*/
+}
+
+.siteHeader .mat-toolbar{
+      background: #25262B;
+}
+
+.emailContainer{
+    padding: 10px;
+}
+
+.setRight{
+    text-align: right;
+    margin-left: auto;
+    padding: 5%;
+}
+
+.siteHeader .banner-wide{
+    margin: 27%;
+    border: 2px solid white;
+    /*padding: 28%;*/
+}
+
+.siteHeader .custom-logo-link {
+  display: block;
+  color: #FFF;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 10px;
+}
+.siteHeader .custom-logo-link img {
+  width: 165px;
+  height: 70px;
+}
+
+.menuHeader mat-toolbar{
+    /*border: 3px solid red;*/
+    background: #25262B;
+    width: 30%;
+}
+
+mat-button-toggle-group{
+   background: #25262B; 
+}
+
+mat-button-toggle:click{
+    color: #F66249;
+}
+
+.cartBtn {
+    padding-left: 40px;
+    padding-right: 40px;
+    background: #F66249;
+}
+
+.cartBtn a{
+    text-decoration-line: none;
+}
+
+.mat-button-toggle-checked {
+    background-color: #e0e0e0;
+    color: #F66249;
+}
+
+.mat-button-toggle {
+    color: white !important;
+}
+
+/*Link CSS*/
+a {
+  color: #F66249;
+}
+a:visited {
+  color: #f88c7a;
+}
+a:hover, a:focus, a:active {
+  color: #f43818;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover, a:active {
+  outline: 0;
+}

@@ -1,0 +1,21 @@
+.footer_container {
+    display: block;
+    background-color: #2b2e34;
+    color: #FFF;
+    
+}
+
+..mat-card{
+    background-color: #2b2e34;
+    
+}
+
+.copyright-text{
+    text-align: right;
+    color: #FFF;    
+}
+
+.menu-social{
+    padding: 10px 10px;
+    color: #FFF;
+}
