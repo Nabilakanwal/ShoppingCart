@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {MatToolbarModule, MatIconModule, MatCardModule, MatListModule, MatInputModule, MatFormFieldModule, MatMenuModule, MatButtonModule, MatButtonToggleModule, MatTabsModule} from '@angular/material';
 import {FormControl, Validators} from '@angular/forms';
+import { DbserviceService } from '../../services/dbservice.service';
+import { LeftnavshopComponent } from '../leftnavshop/leftnavshop.component';
+
 
 @Component({
   selector: 'app-home',
@@ -8,6 +11,7 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  displayProductsArr;
     tiles = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
     {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
@@ -15,7 +19,11 @@ export class HomeComponent implements OnInit {
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
 
-  constructor() { }
+  constructor(private dbService : DbserviceService) {
+    this.dbService.getProductsList((productsArr)=>{
+        this.displayProductsArr = productsArr;
+      });
+   }
 
   ngOnInit() {
   }

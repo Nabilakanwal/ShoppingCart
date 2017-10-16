@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators, NgForm} from '@angular/forms'
-import {  MatToolbarModule, 
-          MatIconModule, 
-          MatCardModule, 
-          MatInputModule, 
-          MatFormFieldModule, 
-          MatMenuModule, 
-          MatButtonModule, 
-          MatButtonToggleModule, 
-          MatTabsModule,
-          MatSelectModule
-        } from '@angular/material';
+import {FormControl, Validators, NgForm} from '@angular/forms';
+import { DbserviceService } from '../../services/dbservice.service';
+// import {  MatToolbarModule, 
+//           MatIconModule, 
+//           MatCardModule, 
+//           MatInputModule, 
+//           MatFormFieldModule, 
+//           MatMenuModule, 
+//           MatButtonModule, 
+//           MatButtonToggleModule, 
+//           MatTabsModule,
+//           MatSelectModule
+//         } from '@angular/material';
 
 @Component({
   selector: 'app-add-product',
@@ -19,20 +20,34 @@ import {  MatToolbarModule,
 })
 export class AddProductComponent implements OnInit {
 
+
+  displayProductsArr;
+  // selectedValue: string;
+
   categories = [
     {value: 'Men-0', viewValue: 'Men'},
     {value: 'Women-1', viewValue: 'Women'},
     {value: 'Kids-2', viewValue: 'Kids'},
-    {value: 'Gift-2', viewValue: 'Gifts'}
+    {value: 'Gift-3', viewValue: 'Gifts'}
   ];
 
-  constructor() { }
+  constructor(private dbService : DbserviceService) {
+      this.dbService.getProductsList((productsArr)=>{
+        this.displayProductsArr = productsArr;
+      //  console.log("this.displayProductsArr================>>>>", productsArr);
+      //  console.log("this.displayProductsArr================>>>>", productsArr.length);
+      });
+   }
 
+  
   ngOnInit() {
   }
 
-   onSubmit(form: NgForm) {
-    console.log(form)
+   onSubmit(formValue) {
+    console.log("save product detail: ", formValue);
+    this.dbService.saveProduct(formValue);
+    // console.log(form)
   }
+
 
 }

@@ -13,6 +13,10 @@ body{
     line-height: 1.5;
 }
 
+.product_container{
+    display: inline-flex;
+
+}
 
 
 .main-slider{

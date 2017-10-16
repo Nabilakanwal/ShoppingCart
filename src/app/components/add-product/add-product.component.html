@@ -1,23 +1,18 @@
-<mat-card>
-  <h2>Add Product Details</h2>
-</mat-card>
 
   <section>
-
-
   <mat-card class="addProductContainer">
-    <!--<mat-card-header>
+    <mat-card-header>
       <mat-card-title>
         <span>Add Product Details</span>
       </mat-card-title>
     </mat-card-header>
 
-    <mat-card-content>-->
-      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+    <mat-card-content>
+      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm.value)">
         <table class="full-width" cellspacing="0">
             <tr>
               <mat-form-field>
-                <mat-select placeholder="Select Product Category">
+                <mat-select placeholder="Select Product Category" name="selectedCategory" ngModel>
                   <mat-option *ngFor="let category of categories" [value]="category.value">
                     {{ category.viewValue }}
                   </mat-option>
@@ -48,13 +43,40 @@
                      required autofocus pQty>
             </mat-input-container>
           </tr>
+            <tr>
+            <mat-input-container class="full-width">
+              <input matInput type="text" placeholder="Image URL" name="pImgURL" ngModel
+                     required autofocus pQty>
+            </mat-input-container>
+          </tr>
         </table>
         <button class="submit-btn" type="submit" mat-raised-button color="primary" [disabled]="!authForm.form.valid">Add Product in List</button>
-
+        
       </form>
-    <!--</mat-card-content>-->
+    </mat-card-content>
   </mat-card>
 
+    <!--<mat-card class="test1">
+      <div id="details-container">
+      <ul>
+        <li *ngFor="let prod of displayProductsArr">
+          {{ prod.product.pName }}
+        </li>
+      </ul>
+  </div>
+    </mat-card>-->
+
+    <!--<div class="product_container">
+      <mat-card class="example-card" *ngFor="let prod of displayProductsArr">
+          <mat-card-content>
+                  <p><img mat-card-image src="{{prod.product.pImgURL}}" style="width: 200px;" alt="Photo of a Shiba Inu"></p>
+                  <mat-card-title>{{prod.product.pName}}</mat-card-title>
+                  <p> $ {{prod.product.pPrice}} </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-raised-button  color="warn">Add To Cart</button>
+                </mat-card-actions>
+        </mat-card>
+    </div>-->
+
 </section>
-
-

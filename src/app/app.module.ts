@@ -9,21 +9,25 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule, MatButtonToggleModule, MatListModule, MatIconModule, MatSelectModule, MatInputModule, MatCardModule, MatMenuModule, MatButtonModule, MatGridListModule, MatTabsModule, MatFormFieldModule} from '@angular/material';
+import {MatToolbarModule, MatButtonToggleModule, MatSliderModule, MatListModule, MatIconModule, MatSelectModule, MatInputModule, MatCardModule, MatMenuModule, MatButtonModule, MatGridListModule, MatTabsModule, MatFormFieldModule} from '@angular/material';
 import { HeaderComponent } from './components/header/header.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
+//service
+import { DbserviceService } from './services/dbservice.service';
+import { LeftnavshopComponent } from './components/leftnavshop/leftnavshop.component';
+
 
 
 export const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: ""
+    apiKey: "AIzaSyBW8u2CYurxYLXyUQdj282rp7dbjXFGk5s",
+    authDomain: "exampleappfirebase.firebaseapp.com",
+    databaseURL: "https://exampleappfirebase.firebaseio.com",
+    projectId: "exampleappfirebase",
+    storageBucket: "exampleappfirebase.appspot.com",
+    messagingSenderId: "338916789692"
 };
 
 @NgModule({
@@ -33,7 +37,8 @@ export const firebaseConfig = {
     ContactComponent,
     HomeComponent,
     FooterComponent,
-    AddProductComponent
+    AddProductComponent,
+    LeftnavshopComponent
   ],
   imports: [
     BrowserModule,
@@ -52,11 +57,12 @@ export const firebaseConfig = {
     MatInputModule,
     MatListModule,
     MatSelectModule,
+    MatSliderModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [ DbserviceService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
