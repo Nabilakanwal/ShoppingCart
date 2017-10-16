@@ -6,6 +6,7 @@ import { AngularFireModule } from 'angularfire2';
 // New imports to update based on AngularFire2 version 4
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +19,9 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 //service
 import { DbserviceService } from './services/dbservice.service';
 import { LeftnavshopComponent } from './components/leftnavshop/leftnavshop.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ViewCartComponent } from './components/view-cart/view-cart.component';
 
 
 
@@ -38,7 +42,10 @@ export const firebaseConfig = {
     HomeComponent,
     FooterComponent,
     AddProductComponent,
-    LeftnavshopComponent
+    LeftnavshopComponent,
+    ShopComponent,
+    ProductDetailComponent,
+    ViewCartComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +67,25 @@ export const firebaseConfig = {
     MatSliderModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    RouterModule.forRoot([
+      {
+         path: 'home',
+         component: HomeComponent
+      },
+      {
+         path: 'shop',
+         component: ShopComponent
+      },
+      {
+         path: 'contact',
+         component: ContactComponent
+      },
+      {
+         path: 'addProduct',
+         component: AddProductComponent
+      }
+    ])
   ],
   providers: [ DbserviceService ],
   bootstrap: [AppComponent]

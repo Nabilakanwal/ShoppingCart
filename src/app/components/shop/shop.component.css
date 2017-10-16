@@ -1,0 +1,15 @@
+.lefNav_container{
+    width: 30%;
+    border: 3px solid orangered;
+}
+
+.shopProduct_container{
+    width: 69%;
+    border: 3px solid blue;
+    float: right;
+}
+
+.product_container{
+    display: inline-flex;
+
+}

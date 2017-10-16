@@ -33,17 +33,17 @@
   <div class="menuHeader">
       <mat-toolbar >
           <mat-button-toggle-group #group="matButtonToggleGroup" class="menuButtons">
-              <mat-button-toggle value="home" style="width: 20%;">
+              <mat-button-toggle value="home" style="width: 20%;" routerLink="/home">
                 Home
               </mat-button-toggle>
-              <mat-button-toggle value="shop" style="width: 20%;">
+              <mat-button-toggle value="shop" style="width: 20%;" routerLink="/shop">
                 Shop
               </mat-button-toggle>
-              <mat-button-toggle value="blog">
-                Blog
-              </mat-button-toggle>
-              <mat-button-toggle value="contact">
+              <mat-button-toggle value="contact" routerLink="/contact">
                 Contact Us
+              </mat-button-toggle>
+              <mat-button-toggle value="addproduct" routerLink="/addProduct">
+                Add Product
               </mat-button-toggle>
             </mat-button-toggle-group>        
       </mat-toolbar>

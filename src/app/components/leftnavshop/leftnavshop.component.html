@@ -1,19 +1,31 @@
-<p>
-  leftnavshop works!
-</p>
 
+ <h3>Home/Shop</h3>
 
-<mat-slider
- class="example-margin"
-        [disabled]="disabled"
-        [invert]="invert"
-        [max]="max"
-        [min]="min"
-        [step]="step"
-        [thumb-label]="thumbLabel"
-        [tick-interval]="tickInterval"
-        [value]="value"
-        [vertical]="vertical"
->
-</mat-slider>
-<p><span>{{min}}</span> <span>    </span> <span>{{max}}</span></p>
+<div class="serach_area">
+  <mat-input-container >
+           <input  matInput type="search" placeholder="Search" id="sampleSearchInput" ngModel />
+  </mat-input-container>
+  <p>
+   <button mat-raised-button color="warn">Search</button>    
+  </p>
+</div>
+
+  <div>
+          <mat-slider
+         class="example-margin"
+              [disabled]="disabled"
+              [invert]="invert"
+              [max]="max"
+              [min]="min"
+              [step]="step"
+              [thumb-label]="thumbLabel"
+              [tick-interval]="tickInterval"
+              [value]="value"
+              [vertical]="vertical"
+      >
+      </mat-slider>
+      <p><span>{{min}}</span> <span>    </span> <span>{{max}}</span></p>
+      <p>
+        <button mat-raised-button color="warn">Filter</button>    
+        </p>
+  </div>

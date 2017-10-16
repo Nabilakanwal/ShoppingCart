@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {MatToolbarModule, MatIconModule, MatCardModule, MatListModule, MatInputModule, MatFormFieldModule, MatMenuModule, MatButtonModule, MatButtonToggleModule, MatTabsModule} from '@angular/material';
 import {FormControl, Validators} from '@angular/forms';
 import { DbserviceService } from '../../services/dbservice.service';
-import { LeftnavshopComponent } from '../leftnavshop/leftnavshop.component';
 
 
 @Component({
