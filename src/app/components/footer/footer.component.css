@@ -2,20 +2,29 @@
     display: block;
     background-color: #2b2e34;
     color: #FFF;
+    margin: 0 0 0 0 !important;
     
 }
 
-..mat-card{
+.mat-card{
     background-color: #2b2e34;
+    padding: 0 !important;
     
 }
 
 .copyright-text{
     text-align: right;
-    color: #FFF;    
+    color: #FFF;  
+    display: inline-block;  
 }
 
 .menu-social{
     padding: 10px 10px;
     color: #FFF;
+    display: inline-block;
+    width: 65%;
+    margin: auto;
+}
+.material-icons{
+padding: 20px;
 }

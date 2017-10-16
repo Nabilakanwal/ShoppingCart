@@ -1,6 +1,18 @@
 
 <div class="home_container">
-  <mat-grid-list cols="1" rowHeight="1:1">
+	<div class="main-slider" >
+			   <md-card flex-sm="25" flex-gt-sm="30" flex="100"> <img class="tileImage" src="assets/images/hero.jpg"></md-card>
+                <md-card flex-sm="25" flex-gt-sm="30" flex="100">  <div class="hero-caption">
+                      <span class="year">2017</span>
+                      <span class="caption">Autumn Collection</span>
+                      <div class="btn-group">
+                              <button mat-raised-button color="warn" class="shopNowbtn">Shop Now</button>
+                              <button mat-raised-button color="warn" class="learnbtn">Learn More</button>                     
+                      </div>
+                  </div>
+                </md-card>
+	</div>
+  <!--<mat-grid-list cols="1" rowHeight="1:1">
         <mat-grid-tile colspan=1 rowspan=1>
               <div class="main-slider" >
                     <img src="assets/images/hero.jpg">
@@ -14,23 +26,23 @@
                   </div>
       </div>
         </mat-grid-tile>
-      </mat-grid-list>
+      </mat-grid-list>-->
 
         <mat-grid-list cols="3" rowHeight="50px" class="mainSliderInfo">
                 <mat-grid-tile class="setContent">
                       <i class="material-icons">public</i>
-                      <h4>FREE SHIPPING</h4><br/>
-                      <P><span class="subCaption">On all orders over 90$</span></P> 
+                      <h4>FREE SHIPPING</h4>
+                      <p class="subTitles"><span class="subCaption">On all orders over 90$</span></p> 
                   </mat-grid-tile>
                   <mat-grid-tile class="setContent">
                       <i class="material-icons">call</i>
-                      <h4>CALL US ANYTIME</h4><br/>
-                      <P><span>+04786445953</span></P> 
+                      <h4>CALL US ANYTIME</h4>
+                      <P class="subTitles"><span>+04786445953</span></P> 
                   </mat-grid-tile>
                   <mat-grid-tile class="setContent">
                       <i class="material-icons">location_on</i>
-                      <h4>OUR LOCATION</h4><br/><br> 
-                      <P><span>557-6308 Lacinia Road. NYC</span></P>          
+                      <h4>OUR LOCATION</h4> 
+                      <P class="subTitles"><span>557-6308 Lacinia Road. NYC</span></P>          
                   </mat-grid-tile>
         </mat-grid-list>
 
@@ -39,24 +51,24 @@
         <mat-grid-tile>2gtttttttttttttttttttttt</mat-grid-tile>
         <mat-grid-tile>3b hhhhhhhhhhhhhhhhhhhhhhhhhhhhh</mat-grid-tile>
       </mat-grid-list>-->
-
-	  <div class="product_container">
-      <mat-card class="example-card" *ngFor="let prod of displayProductsArr">
-           <!--<mat-card-header>
-               <div mat-card-avatar class="example-header-image"></div>
-                {{prod.product.pDescription}}
-                <mat-card-subtitle>{{prod.product.pQty}}</mat-card-subtitle>
-                </mat-card-header>-->
-                
-        <mat-card-content>
-            <p><img mat-card-image src="{{prod.product.pImgURL}}" style="width: 300px;" alt="Photo of a Shiba Inu"></p>
-            <mat-card-title>{{prod.product.pName}}</mat-card-title>
-            <p> $ {{prod.product.pPrice}} </p>
-            </mat-card-content>
-            <mat-card-actions>
-                  <button mat-raised-button  color="warn">Add To Cart</button>
-        	</mat-card-actions>
-    	</mat-card>
+	  <div class="product_container">		
+      <mat-card class="example-card" *ngFor="let prod of displayProductsArr">		
+           <!--<mat-card-header>		
+               <div mat-card-avatar class="example-header-image"></div>		
+                {{prod.product.pDescription}}		
+                <mat-card-subtitle>{{prod.product.pQty}}</mat-card-subtitle>		
+                </mat-card-header>-->		
+		<div class="holder">        		
+        <mat-card-content>		
+            <p><img mat-card-image src="{{prod.product.pImgURL}}" style="width: 243px;" alt="Photo of a Shiba Inu"></p>		
+            <mat-card-title>{{prod.product.pName}}</mat-card-title>		
+            <p> $ {{prod.product.pPrice}} </p>		
+            </mat-card-content>		
+            <mat-card-actions>		
+                  <button mat-raised-button  color="warn">Add To Cart</button>		
+        	</mat-card-actions>	
+		</div>	
+    	</mat-card>		
     	</div>
 
       	<!-- Content Area #1 -->

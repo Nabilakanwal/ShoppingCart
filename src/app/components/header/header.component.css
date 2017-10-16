@@ -20,6 +20,28 @@
     width: 25%;
 }*/
 
+.mat-button-toggle[_ngcontent-c1] {
+     color: white !important; 
+}
+.example-selected-value{
+    width: 88%;
+    margin: auto;
+}
+.mat-button-toggle[_ngcontent-c1]:hover {
+     color: #F66249 !important; 
+}
+.nav-container > mat-button-toggle:hover{
+    color:#F66249 !important;
+}
+.mat-button-toggle[_ngcontent-c1] {
+    background-color: transparent !important;
+}
+.menuButtons{
+    font-size: 17px;
+    font-weight: 700;
+    padding: 0px 48px 14px 67px;
+    box-shadow: none !important;
+}
 .headerBox{
     background: #2b2e34;
 }
@@ -34,6 +56,7 @@ topHeaderContainer mat-toolbar{
     background: #2b2e34 !important;
     color: #FFF;
     vertical-align: middle;
+    height: 54px;
     /*border: 3px solid red;*/
 }
 #sampleSearchInput{
@@ -43,7 +66,8 @@ topHeaderContainer mat-toolbar{
     font-size: 15px;
     padding-left: 10px;
     padding-right: 15px;
-    height: 30px
+    height: 30px;
+    border-radius: 5px;
 }
 
 /*.searchContainer i{
@@ -53,13 +77,36 @@ topHeaderContainer mat-toolbar{
 span input i{
     color: #FFF;
 }
-
+.icon-container,.material-icons{
+    vertical-align: middle;
+}
+.icon-container{
+border-right: 1px solid grey;
+    padding: 6px;
+}
+.accountContainer,.cartContainer{
+    display: inline-block;
+}
+.cartContainer{
+    
+}
+.acc-icon{
+    padding: 4px
+}
+.material-icons{
+    font-size: 19px !important;
+}
+.searchContainer{
+    width: 177px;
+    display: inline-block;
+    margin-right: 54px;
+}
 .topHeaderContainer .mat-toolbar{
     background: #2b2e34 !important;
     color: #FFF;
 }
 .siteHeader {
-  padding-top: 30px;
+  /*padding-top: 30px;*/
   border-bottom-color: grey;
   /*border: 3px solid red;*/
 }
@@ -69,27 +116,38 @@ span input i{
 }
 
 .emailContainer{
-    padding: 10px;
+    /*padding: 10px;*/
+    width: 24%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: lighter;
 }
 
 .setRight{
     text-align: right;
-    margin-left: auto;
-    padding: 5%;
+    width: 70%;
+    display: inline-block;
+    /*margin-left: auto;
+    padding: 5%;*/
 }
 
 .siteHeader .banner-wide{
-    margin: 27%;
+    margin: 25%;
     border: 2px solid white;
     /*padding: 28%;*/
 }
+/*.logoContainer{
 
+}*/
+.banner-wide{display: none}
 .siteHeader .custom-logo-link {
   display: block;
   color: #FFF;
   font-size: 30px;
   font-weight: 700;
-  padding: 10px;
+  width: 25%;
+  text-align: center;
+  /*padding: 10px;*/
 }
 .siteHeader .custom-logo-link img {
   width: 165px;
@@ -99,7 +157,7 @@ span input i{
 .menuHeader mat-toolbar{
     /*border: 3px solid red;*/
     background: #25262B;
-    width: 30%;
+    
 }
 
 mat-button-toggle-group{
@@ -109,15 +167,23 @@ mat-button-toggle-group{
 mat-button-toggle:click{
     color: #F66249;
 }
+/*mat-button{
 
+}*/
 .cartBtn {
-    padding-left: 40px;
-    padding-right: 40px;
+    /*padding-left: 40px;
+    padding-right: 40px;*/
     background: #F66249;
+    line-height: 4em;
+    padding-top: -2px;
+    position: relative;
+    top: -7px;
+    width: 190px;
 }
 
 .cartBtn a{
     text-decoration-line: none;
+    color: white
 }
 
 .mat-button-toggle-checked {
@@ -144,4 +210,22 @@ a:focus {
 }
 a:hover, a:active {
   outline: 0;
+}
+@media only screen and (max-width: 650px){
+        .emailContainer{
+            width: 50%
+        }
+        .setRight{
+            text-align: right;
+            width: 50%;
+            display: inline-block;
+        }
+        .searchContainer{
+            width: 50%; 
+            display: inline-block;
+            margin-right: 54px;
+        }
+        .topHeaderContainer .mat-toolbar-row{
+            display: block !important;
+        }
 }
