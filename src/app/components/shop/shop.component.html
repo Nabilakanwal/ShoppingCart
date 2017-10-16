@@ -8,14 +8,16 @@
   
     <div class="shopProduct_container">
       <div class="product_container">
-      <mat-card class="example-card" *ngFor="let prod of displayProductsArr">
+      <mat-card class="example-card" *ngFor="let prod of displayProductsArr" >
             <mat-card-content>
                 <p><img mat-card-image src="{{prod.product.pImgURL}}" style="width: 300px;" alt="Photo of product"></p>
                 <mat-card-title>{{prod.product.pName}}</mat-card-title>
                 <p> $ {{prod.product.pPrice}} </p>
                 </mat-card-content>
                 <mat-card-actions>
-                      <button mat-raised-button  color="warn">Add To Cart</button>
+                      <button mat-raised-button  color="warn"  name="addProductCartBtn" (click)="productAddinCart(prod)" >Add To Cart</button>
+                      <button mat-raised-button color="warn"  name="viewCartBtn" (click)="viewCart(prod)" *ngIf="displayViewCartBtn" [id]="prod.key">View Cart</button>
+                       <!--routerLink="/cart" -->
               </mat-card-actions>
           </mat-card>
     	</div>

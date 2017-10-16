@@ -84,6 +84,10 @@ export const firebaseConfig = {
       {
          path: 'addProduct',
          component: AddProductComponent
+      },
+      {
+         path: 'cart',
+         component: ViewCartComponent
       }
     ])
   ],
