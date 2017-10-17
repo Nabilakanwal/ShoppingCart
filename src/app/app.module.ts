@@ -70,6 +70,10 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     RouterModule.forRoot([
       {
+         path: '',
+         component: HomeComponent
+      },
+      {
          path: 'home',
          component: HomeComponent
       },

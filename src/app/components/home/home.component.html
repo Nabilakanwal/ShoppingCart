@@ -46,23 +46,13 @@
                   </mat-grid-tile>
         </mat-grid-list>
 
-      <!--<mat-grid-list cols="3" rowHeight="1:1">
-        <mat-grid-tile>14333333333333</mat-grid-tile>
-        <mat-grid-tile>2gtttttttttttttttttttttt</mat-grid-tile>
-        <mat-grid-tile>3b hhhhhhhhhhhhhhhhhhhhhhhhhhhhh</mat-grid-tile>
-      </mat-grid-list>-->
-	  <div class="product_container">		
-      <mat-card class="example-card" *ngFor="let prod of displayProductsArr">		
-           <!--<mat-card-header>		
-               <div mat-card-avatar class="example-header-image"></div>		
-                {{prod.product.pDescription}}		
-                <mat-card-subtitle>{{prod.product.pQty}}</mat-card-subtitle>		
-                </mat-card-header>-->		
-		<div class="holder">        		
-        <mat-card-content>		
-            <p><img mat-card-image src="{{prod.product.pImgURL}}" style="width: 243px;" alt="Photo of a Shiba Inu"></p>		
+	  <div class="product_container" flex-sm="25" flex-gt-sm="30" flex="100">		
+      <mat-card class="example-card" *ngFor="let prod of displayProductsArr">				
+			<div class="holder">        		
+			<mat-card-content>		
+            <p><img mat-card-image src="{{prod.product.pImgURL}}" style="width: 243px; height: 286px" alt="Photo of a Shiba Inu"></p>		
             <mat-card-title>{{prod.product.pName}}</mat-card-title>		
-            <p> $ {{prod.product.pPrice}} </p>		
+            <p style="font-weight: 900;font-size: 18px;">  $ {{prod.product.pPrice}} </p>		
             </mat-card-content>		
             <mat-card-actions>		
                   <button mat-raised-button  color="warn">Add To Cart</button>		
@@ -71,145 +61,3 @@
     	</mat-card>		
     	</div>
 
-      	<!-- Content Area #1 -->
-	<!--<section class="content-area-1">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<div id="tyche_products-3" class="tyche-products primary widget widget_tyche_products"><h3 class="widget-title"><span>ALL BLACK TOPS</span></h3>
-<div class="row tyche-product-slider-container">
-	<div class="tyche-product-slider-navigation hidden-xs">
-		<a class="prev" href="https://colorlib.com/tyche/#"><i class="fa fa-angle-left"></i></a>
-		<a class="next" href="https://colorlib.com/tyche/#"><i class="fa fa-angle-right"></i></a>
-	</div>
-	<div class="col-sm-9 col-xs-12">
-		<div class="owl-carousel tyche-product-slider owl-loaded owl-drag" data-attr-elements="3">
-							
-							
-							
-					<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 879px;"><div class="owl-item active" style="width: 262.667px; margin-right: 30px;"><div class="item">
-					<div class="tyche-product primary">
-						<div class="tyche-product-image" style="position: relative; overflow: hidden;">
-							
-							<img width="255" height="320" src="./Home - Tyche Demo_files/woman-1477091_1920-255x320.jpg" data-src="https://colorlib.com/tyche/wp-content/uploads/sites/17/2017/06/woman-1477091_1920-540x500.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="">						<img role="presentation" src="./Home - Tyche Demo_files/woman-1477091_1920-540x500.jpg" class="zoomImg" style="position: absolute; top: 0px; left: 0px; opacity: 0; width: 540px; height: 500px; border: none; max-width: none; max-height: none;"></div>
-						<div class="tyche-product-body">
-							<h3><a href="https://colorlib.com/tyche/product/black-top/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Black Top</a></h3>
-														
-																						<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>35.00</span></span>
-							
-							<a rel="nofollow" href="https://colorlib.com/tyche/?add-to-cart=19" data-quantity="1" data-product_id="19" data-product_sku="" class="ajax_add_to_cart add_to_cart_button button primary"><span class="fa fa-shopping-cart"></span> Add to cart</a>						</div>
-
-					</div>
-				</div></div><div class="owl-item active" style="width: 262.667px; margin-right: 30px;"><div class="item">
-					<div class="tyche-product primary">
-						<div class="tyche-product-image" style="position: relative; overflow: hidden;">
-							
-								<span class="onsale">Sale!</span>
-							
-							<img width="255" height="320" src="./Home - Tyche Demo_files/girl-1286993_1920-255x320.jpg" data-src="https://colorlib.com/tyche/wp-content/uploads/sites/17/2017/06/girl-1286993_1920-540x500.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="">						<img role="presentation" src="./Home - Tyche Demo_files/girl-1286993_1920-540x500.jpg" class="zoomImg" style="position: absolute; top: 0px; left: 0px; opacity: 0; width: 540px; height: 500px; border: none; max-width: none; max-height: none;"></div>
-						<div class="tyche-product-body">
-							<h3><a href="https://colorlib.com/tyche/product/little-black-top/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Little Black Top</a></h3>
-														
-																						<span class="price"><del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>35.00</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>20.00</span></ins></span>
-							
-							<a rel="nofollow" href="https://colorlib.com/tyche/?add-to-cart=17" data-quantity="1" data-product_id="17" data-product_sku="" class="ajax_add_to_cart add_to_cart_button button primary"><span class="fa fa-shopping-cart"></span> Add to cart</a>						</div>
-
-					</div>
-				</div></div><div class="owl-item active" style="width: 262.667px; margin-right: 30px;"><div class="item">
-					<div class="tyche-product primary">
-						<div class="tyche-product-image" style="position: relative; overflow: hidden;">
-							
-							<img width="255" height="320" src="./Home - Tyche Demo_files/model-858751_1920-255x320.jpg" data-src="https://colorlib.com/tyche/wp-content/uploads/sites/17/2017/06/model-858751_1920-540x500.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="">						<img role="presentation" src="./Home - Tyche Demo_files/model-858751_1920-540x500.jpg" class="zoomImg" style="position: absolute; top: 0px; left: 0px; opacity: 0; width: 540px; height: 500px; border: none; max-width: none; max-height: none;"></div>
-						<div class="tyche-product-body">
-							<h3><a href="https://colorlib.com/tyche/product/little-black-shirt/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Little Black Shirt</a></h3>
-														
-																						<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>40.00</span></span>
-							
-							<a rel="nofollow" href="https://colorlib.com/tyche/?add-to-cart=15" data-quantity="1" data-product_id="15" data-product_sku="" class="ajax_add_to_cart add_to_cart_button button primary"><span class="fa fa-shopping-cart"></span> Add to cart</a>						</div>
-
-					</div>
-				</div></div></div></div><div class="owl-nav disabled"><div class="owl-prev">prev</div><div class="owl-next">next</div></div><div class="owl-dots disabled"><div class="owl-dot active"><span></span></div></div></div>
-	</div>
-		<div class="col-sm-3 hidden-xs">
-		<div class="tyche-banner" style="background-image:url(https://colorlib.com/tyche/wp-content/uploads/sites/17/2017/06/long-dress-1438140_1920.jpg)">
-			<div class="tyche-banner-caption">
-									<span class="first_line"> SAVE UP TO </span>
-													<span class="second_line"> 50%  </span>
-													<span class="third_line"> ON OUR GALLA DRESSES </span>
-													<a href="https://colorlib.com/">BUY NOW</a>
-							</div>
-		</div>
-	</div>
-</div>
-</div><div id="tyche_products-4" class="tyche-products secondary widget widget_tyche_products"><h3 class="widget-title"><span>HIGH HEEL SHOES</span></h3>
-<div class="row tyche-product-slider-container">
-	<div class="tyche-product-slider-navigation hidden-xs">
-		<a class="prev" href="https://colorlib.com/tyche/#"><i class="fa fa-angle-left"></i></a>
-		<a class="next" href="https://colorlib.com/tyche/#"><i class="fa fa-angle-right"></i></a>
-	</div>
-		<div class="col-sm-3 hidden-xs">
-		<div class="tyche-banner" style="background-image:url(https://colorlib.com/tyche/wp-content/uploads/sites/17/2017/06/high-heels-1426011_1920.jpg)">
-			<div class="tyche-banner-caption">
-									<span class="first_line"> SAVE UP TO </span>
-													<span class="second_line"> 50%  </span>
-													<span class="third_line"> ON OUR GALLA DRESSES </span>
-													<a href="https://colorlib.com/">BUY NOW</a>
-							</div>
-		</div>
-	</div>
-	<div class="col-sm-9 col-xs-12">
-		<div class="owl-carousel tyche-product-slider owl-loaded owl-drag" data-attr-elements="3">
-							
-							
-							
-					<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 879px;"><div class="owl-item active" style="width: 262.667px; margin-right: 30px;"><div class="item">
-					<div class="tyche-product secondary">
-						<div class="tyche-product-image" style="position: relative; overflow: hidden;">
-							
-								<span class="onsale">Sale!</span>
-							
-							<img width="255" height="320" src="./Home - Tyche Demo_files/elegance-18594_1920-255x320.jpg" data-src="https://colorlib.com/tyche/wp-content/uploads/sites/17/2017/06/elegance-18594_1920-540x500.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="">						<img role="presentation" src="./Home - Tyche Demo_files/elegance-18594_1920-540x500.jpg" class="zoomImg" style="position: absolute; top: 0px; left: 0px; opacity: 0; width: 540px; height: 500px; border: none; max-width: none; max-height: none;"></div>
-						<div class="tyche-product-body">
-							<h3><a href="https://colorlib.com/tyche/product/red-magawi-shoes/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Red Magawi Shoes</a></h3>
-														
-																						<span class="price"><del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>35.00</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>25.00</span></ins></span>
-							
-							<a rel="nofollow" href="https://colorlib.com/tyche/?add-to-cart=25" data-quantity="1" data-product_id="25" data-product_sku="" class="ajax_add_to_cart add_to_cart_button button secondary"><span class="fa fa-shopping-cart"></span> Add to cart</a>						</div>
-
-					</div>
-				</div></div><div class="owl-item active" style="width: 262.667px; margin-right: 30px;"><div class="item">
-					<div class="tyche-product secondary">
-						<div class="tyche-product-image" style="position: relative; overflow: hidden;">
-							
-							<img width="255" height="320" src="./Home - Tyche Demo_files/shoe-1040802_1920-255x320.jpg" data-src="https://colorlib.com/tyche/wp-content/uploads/sites/17/2017/06/shoe-1040802_1920-540x500.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="">						<img role="presentation" src="./Home - Tyche Demo_files/shoe-1040802_1920-540x500.jpg" class="zoomImg" style="position: absolute; top: 0px; left: 0px; opacity: 0; width: 540px; height: 500px; border: none; max-width: none; max-height: none;"></div>
-						<div class="tyche-product-body">
-							<h3><a href="https://colorlib.com/tyche/product/blue-magawi-shoes/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Blue Magawi Shoes</a></h3>
-														
-																						<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>37.00</span></span>
-							
-							<a rel="nofollow" href="https://colorlib.com/tyche/?add-to-cart=23" data-quantity="1" data-product_id="23" data-product_sku="" class="ajax_add_to_cart add_to_cart_button button secondary"><span class="fa fa-shopping-cart"></span> Add to cart</a>						</div>
-
-					</div>
-				</div></div><div class="owl-item active" style="width: 262.667px; margin-right: 30px;"><div class="item">
-					<div class="tyche-product secondary">
-						<div class="tyche-product-image" style="position: relative; overflow: hidden;">
-							
-							<img width="255" height="320" src="./Home - Tyche Demo_files/high-heels-1327020_1920-255x320.jpg" data-src="https://colorlib.com/tyche/wp-content/uploads/sites/17/2017/06/high-heels-1327020_1920-540x500.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="">						<img role="presentation" src="./Home - Tyche Demo_files/high-heels-1327020_1920-540x500.jpg" class="zoomImg" style="position: absolute; top: 0px; left: 0px; opacity: 0; width: 540px; height: 500px; border: none; max-width: none; max-height: none;"></div>
-						<div class="tyche-product-body">
-							<h3><a href="https://colorlib.com/tyche/product/beije-magawi-shoes/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Beije Magawi Shoes</a></h3>
-														
-																						<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>30.00</span></span>
-							
-							<a rel="nofollow" href="https://colorlib.com/tyche/?add-to-cart=21" data-quantity="1" data-product_id="21" data-product_sku="" class="ajax_add_to_cart add_to_cart_button button secondary"><span class="fa fa-shopping-cart"></span> Add to cart</a>						</div>
-
-					</div>
-				</div></div></div></div><div class="owl-nav disabled"><div class="owl-prev">prev</div><div class="owl-next">next</div></div><div class="owl-dots disabled"><div class="owl-dot active"><span></span></div></div></div>
-	</div>
-</div>
-</div>				</div>
-			</div>
-		</div>
-	</section>
-        
-
-</div>-->
