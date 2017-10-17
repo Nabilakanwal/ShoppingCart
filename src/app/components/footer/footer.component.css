@@ -18,13 +18,14 @@
     display: inline-block;  
 }
 
-.menu-social{
-    padding: 10px 10px;
+.menu-social[_ngcontent-c2] {
+    padding: 0px 0px !important;
     color: #FFF;
     display: inline-block;
-    width: 65%;
+    width: 56%;
     margin: auto;
 }
+
 .material-icons{
 padding: 20px;
 }
