@@ -4,11 +4,11 @@
 </p>-->
 
  <div class="contact_Container">
-      <label for="contact"> <h2>Contact</h2> </label>
+      <label for="contact"> <h3 style="font-weight: 400">Contact</h3> </label>
 
        <mat-grid-list cols="3" rowHeight="50px" class="content_container">
-                <mat-grid-tile >
-                      <p class="subTitles"> Pri quas audiam virtute ut, case utamur fuisset eam ut, iisque accommodare an eam. Reque blandit qui eu, cu vix nonumy volumus. Legendos intellegam id usu, vide oporteat vix eu, id illud principes has. Nam tempor utamur gubergren </p> 
+                <mat-grid-tile>
+                      <p class="subTitles" style="top:0"> Pri quas audiam virtute ut, case utamur fuisset eam ut, iisque accommodare an eam. Reque blandit qui eu, cu vix nonumy volumus. Legendos intellegam id usu, vide oporteat vix eu, id illud principes has. Nam tempor utamur gubergren </p> 
                   </mat-grid-tile>
                   <mat-grid-tile >
                       <i class="material-icons">call</i>
@@ -21,7 +21,7 @@
                       <P class="subTitles"><span>New York City Hall, NY 10007, USA</span></P>          
                   </mat-grid-tile>
         </mat-grid-list>
-
+ </div>
       <!--<mat-grid-list cols="3" rowHeight="1:1" class="content_container">
         <mat-grid-tile>
               <p>Pri quas audiam virtute ut, case utamur fuisset eam ut, iisque accommodare an eam. Reque blandit qui eu, cu vix nonumy volumus. Legendos intellegam id usu, vide oporteat vix eu, id illud principes has. Nam tempor utamur gubergren n</p>
@@ -37,24 +37,24 @@
               <P><span>New York City Hall, NY 10007, USA</span></P>
         </mat-grid-tile>
       </mat-grid-list>-->
-
-      <mat-grid-list cols="2" rowHeight="1:1">
+<div class="wayToContact">
+      <mat-grid-list cols="2" rowHeight="1:1" class="contactsOpts">
         <mat-grid-tile class="contactForm_container">
-             <div class="">
+             
                 <form class="contact-form">
-                      <mat-form-field class="example-full-width">
-                        <label for="name">Your Name (required)</label><br/>
-                        <input matInput />
+                      <mat-form-field class="example-full-width formInput">
+                        <label for="name">Your Name (required)</label>
+                        <div><input class="inputCss" matInput /></div>
                       </mat-form-field>
 
-                      <mat-form-field class="example-full-width">
-                        <label for="email">Your Email (required)</label><br/>
-                        <input matInput />
+                      <mat-form-field class="example-full-width formInput">
+                        <label for="email">Your Email (required)</label>
+                        <div><input class="inputCss" matInput /></div>
                       </mat-form-field>
 
-                      <mat-form-field class="example-full-width">
-                        <label for="subject">Subject</label><br/>
-                        <input matInput />
+                      <mat-form-field class="example-full-width formInput">
+                        <label for="subject">Subject</label>
+                        <div><input class="inputCss" matInput /></div>
                       </mat-form-field>
 
                       <mat-form-field class="example-full-width">
@@ -64,11 +64,11 @@
 
                        <button mat-raised-button color="warn">Send</button>
                 </form>
-              </div>
+              
         </mat-grid-tile>
 
         <mat-grid-tile class="map_container">
-              <div>
+              <div style="width: 100%">
                 <!--<h2>MAP AREA</h2>-->
                 <section class="row maps">
                   <iframe width="1000" height="450" frameborder="0" style="border:0"

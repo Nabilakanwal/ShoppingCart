@@ -11,12 +11,16 @@
         <div class="holder">
             <mat-card-content>
                 <p><img mat-card-image src="{{prod.product.pImgURL}}" style="width: 200px;height: 200px;position: absolute;
-    right: 32px;" alt="Photo of product"></p>
+                   right: 32px;" alt="Photo of product"></p>
                 <mat-card-title>{{prod.product.pName}}</mat-card-title>
                 <p> $ {{prod.product.pPrice}} </p>
                 </mat-card-content>
-                <mat-card-actions>
-                      <button mat-raised-button  color="warn">Add To Cart</button>
+                <!--//before cart-->
+                <mat-card-actions> 
+                      <button mat-raised-button  color="warn"  *ngIf="!viewbtn[prod.key]"  (click)="productAddinCart(prod)" > <mat-icon>shopping_cart</mat-icon> Add To Cart</button> 
+                      <!--after in cart-->
+                      <button mat-raised-button  color="warn"  *ngIf="viewbtn[prod.key]"  (click)="productAddinCart(prod)" > <mat-icon>shopping_cart</mat-icon> Add To Cart <i class="material-icons">done</i> </button>
+                       <button mat-raised-button  color="warn" *ngIf="viewbtn[prod.key]" >View Cart</button>
               </mat-card-actions>
         </div>
           </mat-card>

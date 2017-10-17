@@ -54,9 +54,15 @@
             <mat-card-title>{{prod.product.pName}}</mat-card-title>		
             <p style="font-weight: 900;font-size: 18px;">  $ {{prod.product.pPrice}} </p>		
             </mat-card-content>		
-            <mat-card-actions>		
+            <!--<mat-card-actions>		
                   <button mat-raised-button  color="warn">Add To Cart</button>		
-        	</mat-card-actions>	
+        	</mat-card-actions>	-->
+            <mat-card-actions> 
+                      <button mat-raised-button  color="warn"  *ngIf="!viewbtn[prod.key]"  (click)="productAddinCart(prod)" > <mat-icon>shopping_cart</mat-icon> Add To Cart</button> 
+                      <!--after in cart-->
+                      <button mat-raised-button  color="warn"  *ngIf="viewbtn[prod.key]"  (click)="productAddinCart(prod)" > <mat-icon>shopping_cart</mat-icon> Add To Cart <i class="material-icons">done</i> </button>
+                       <button mat-raised-button  color="warn" *ngIf="viewbtn[prod.key]" >View Cart</button>
+            </mat-card-actions>
 		</div>	
     	</mat-card>		
     	</div>

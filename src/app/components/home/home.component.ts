@@ -10,7 +10,16 @@ import { DbserviceService } from '../../services/dbservice.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  displayProductsArr;
+    displayViewCartBtn : Boolean = false;
+    displayProductsArr;
+    viewCartBtn;
+    shopProducts : any = [];
+    viewbtn = {
+
+    }
+
+
+
     tiles = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
     {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
@@ -22,6 +31,20 @@ export class HomeComponent implements OnInit {
     this.dbService.getProductsList((productsArr)=>{
         this.displayProductsArr = productsArr;
       });
+   }
+
+
+    productAddinCart(productData){
+     console.log("Adding product in cart:");  
+      this.displayViewCartBtn = true;
+      this.viewbtn[productData.key] = true;  
+      this.shopProducts.push(productData);
+      console.log(productData);
+   }
+
+   viewCart(){
+      let cartData = this.shopProducts;
+      // this.router.navigate(['/cart', { prodObj : cartData }]);
    }
 
   ngOnInit() {

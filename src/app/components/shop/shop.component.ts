@@ -13,6 +13,9 @@ export class ShopComponent implements OnInit {
    displayProductsArr;
    viewCartBtn;
    shopProducts : any = [];
+   viewbtn = {
+
+   }
 
   constructor(private dbService : DbserviceService) {
       this.dbService.getProductsList((productsArr)=>{
@@ -23,16 +26,9 @@ export class ShopComponent implements OnInit {
    productAddinCart(productData){
      console.log("Adding product in cart:");  
       this.displayViewCartBtn = true;
-    //  if(productData.key == ""){
-    //     this.displayViewCartBtn = true;
-    //  }
-    //  else{
-    //     this.displayViewCartBtn = false;
-    //  }   
-     
-     this.shopProducts.push(productData);
-     console.log(productData);
-
+      this.viewbtn[productData.key] = true;  
+      this.shopProducts.push(productData);
+      console.log(productData);
    }
 
    viewCart(){

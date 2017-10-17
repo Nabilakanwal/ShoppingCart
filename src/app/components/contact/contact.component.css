@@ -7,13 +7,7 @@ h2 {
     line-height: 40px;
 }
 
-.map_container{
-  border: 2px solid darkred;
-}
 
-.contactForm_container{
-  border: 2px solid yellow;
-}
 
 
 
@@ -25,6 +19,8 @@ h2 {
   min-width: 150px;
   max-width: 500px;
   width: 100%;
+  top: 1px;
+    position: absolute;
 }
 
 .example-full-width {
@@ -33,13 +29,15 @@ h2 {
 
 .maps{
   background-color: #607D8B;
+  position: absolute;
+    top: 0;
 }
 
 .content_container{
     /*border: 2px solid orangered;*/
     /*border: 2px solid greenyellow;*/
-    background: #F66249;
-    color: #FFF;
+    /*background: #F66249;*/
+    color: #607D8B;
     padding: 9px 0 14px;
 }
 
@@ -48,4 +46,45 @@ h2 {
     font-size: 12px;
     margin: 0;
     top: 33px;
+}
+.contact_Container{
+  width: 87%;
+    margin: auto;
+}
+.content_container .mat-grid-tile:first-child{
+height: calc(62px) !important;
+}
+.contactsOpts .contactForm_container{
+    left: 0px !important;
+    width: calc(((30% - 0.5px) * 1) + 0px) !important;
+    margin-top: 0px !important;
+    /*padding-top: calc(((30% - 0.5px) * 1) + 60px) !important;*/
+}
+.contactsOpts .map_container{
+    left: calc(((35% - 0.5px) + 1px) * 1) !important;
+    width: calc(((65% - 0.5px) * 1) + 0px) !important;
+    margin-top: 0px !important;
+    padding-top: calc(((50% - 0.5px) * 1) + 0px) !important;
+}
+.formInput > .mat-form-field-wrapper{
+    padding-bottom: 0 !important;
+}
+.wayToContact{
+    width: 87%;
+    margin: auto;
+}
+.mat-input-underline,.mat-form-field-underline
+{
+      display: none !important;
+}
+/*.inputCss{
+    height: 36px;
+    border: 1px solid grey;
+    width: 97%;
+}*/
+.mat-form-field-subscript-wrapper{
+  width: 0px !important;
+}
+div.mat-input-underline mat-form-field-underline{
+  height: 0px !important;
 }
