@@ -15,10 +15,7 @@ h2 {
   border: 2px solid yellow;
 }
 
-.content_container{
-  border: 2px solid greenyellow;
-  
-}
+
 
 .setStyle{
   position: absolute;
@@ -36,4 +33,19 @@ h2 {
 
 .maps{
   background-color: #607D8B;
+}
+
+.content_container{
+    /*border: 2px solid orangered;*/
+    /*border: 2px solid greenyellow;*/
+    background: #F66249;
+    color: #FFF;
+    padding: 9px 0 14px;
+}
+
+.subTitles{
+    position: absolute;
+    font-size: 12px;
+    margin: 0;
+    top: 33px;
 }
