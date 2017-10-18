@@ -10,7 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule, MatButtonToggleModule, MatSliderModule, MatListModule, MatIconModule, MatSelectModule, MatInputModule, MatCardModule, MatMenuModule, MatButtonModule, MatGridListModule, MatTabsModule, MatFormFieldModule} from '@angular/material';
+import {MatToolbarModule, MatButtonToggleModule, MatTableModule, MatSliderModule, MatListModule, MatIconModule, MatSelectModule, MatInputModule, MatCardModule, MatMenuModule, MatButtonModule, MatGridListModule, MatTabsModule, MatFormFieldModule} from '@angular/material';
 import { HeaderComponent } from './components/header/header.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
@@ -64,6 +64,7 @@ export const firebaseConfig = {
     MatInputModule,
     MatListModule,
     MatSelectModule,
+    MatTableModule,
     MatSliderModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,

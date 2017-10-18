@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireModule } from 'angularfire2';
+import {  FirebaseListObservable } from 'angularfire2/database-deprecated';  //FirebaseListObservable
+
+import { Router } from '@angular/router';
 import { LeftnavshopComponent } from '../leftnavshop/leftnavshop.component';
 import { DbserviceService } from '../../services/dbservice.service';
 
@@ -9,33 +13,48 @@ import { DbserviceService } from '../../services/dbservice.service';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-  displayViewCartBtn : Boolean = false;
+ 
    displayProductsArr;
+   itemsArr;
    viewCartBtn;
-   shopProducts : any = [];
-   viewbtn = {
+   shopProduct$ : FirebaseListObservable<any>[] = [];
+   viewbtn = {};
 
-   }
-
-  constructor(private dbService : DbserviceService) {
-      this.dbService.getProductsList((productsArr)=>{
-        this.displayProductsArr = productsArr;
+  constructor(private dbService : DbserviceService, private af : AngularFireModule, public router : Router ) {
+       let self = this;
+      self.dbService.getProductsList((productsArr)=>{
+        self.displayProductsArr = productsArr;
       });
+     
+      let chkStorage = JSON.parse(localStorage.getItem("itemsArr"));
+      if(chkStorage){
+          chkStorage.forEach(function (value) {
+            self.viewbtn[value.key] = true;
+            // console.log("this.viewbtn[value.key]", this.viewbtn[value.key]);
+            console.log("value.key", value.key);
+            
+        });
+
+      }
+
+      // const cartProducts$ = af.database.object('products/-KwVknBQWSFsI2R8uoEy');
+      
+      
    }
 
-   productAddinCart(productData){
-     console.log("Adding product in cart:");  
-      this.displayViewCartBtn = true;
-      this.viewbtn[productData.key] = true;  
-      this.shopProducts.push(productData);
-      console.log(productData);
+   addProductinCart(item){
+     debugger
+     console.log("Adding product in cart:", item ); 
+      // let cust = this.dbService.user;
+      this.shopProduct$.push(item);
+      console.log("this.shopProduct$", this.shopProduct$);
+      localStorage.setItem("itemsArr", JSON.stringify(this.shopProduct$));
+      
+        this.viewbtn[item.key] = true; 
+            console.log("this.viewbtn[item.key]", this.viewbtn[item.key]);
+            console.log("item.key", item.key);
+          
    }
-
-   viewCart(){
-      let cartData = this.shopProducts;
-      // this.router.navigate(['/cart', { prodObj : cartData }]);
-   }
-
 
     // this.router.navigate(['/cart', { prodObj : productData }]);
 

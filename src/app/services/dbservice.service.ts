@@ -11,13 +11,18 @@ import * as firebase from 'firebase/app';
 @Injectable()
 export class DbserviceService {
 
-     user: Observable<firebase.User>;
-  productRef: AngularFireList<any>;
-  products: Observable<any[]>;
+      user: Observable<firebase.User>;
+      productRef: AngularFireList<any>;
+      products: Observable<any[]>;
+      cartRef: AngularFireList<any>;
+      cartItems: Observable<any[]>;
+      
 
   constructor(db: AngularFireDatabase, public afAuth: AngularFireAuth) { 
         this.user = this.afAuth.authState;   // only triggered on sign-in/out (for old behavior use .idToken)
         this.productRef = db.list('products');
+        this.cartRef = db.list('cartItems');
+        
         // this.getProductsList();
   }
 
@@ -43,6 +48,34 @@ export class DbserviceService {
             // console.log(action.payload.val());
           });
           cb(productArr);
+          
+      });
+      //  return  this.productArr;
+  }
+
+
+   saveCartItems(data, custID) {
+        console.log("Going to save in DB");
+         this.cartRef.push({ ShopItems: data });
+      }
+
+  getItemList(cb){
+        console.log("get Item list from DB service");
+       this.cartItems = this.cartRef.snapshotChanges()
+
+       this.cartRef.snapshotChanges()
+        .subscribe(actions => {
+          let itemArr: any = [];
+          actions.forEach(action => {
+            let itemData:any = {};
+            itemData = action.payload.val();
+            itemData.key = action.key;
+            itemArr.push(itemData);
+            // console.log(action.type);
+            // console.log(action.key);
+            // console.log(action.payload.val());
+          });
+          cb(itemArr);
           
       });
       //  return  this.productArr;

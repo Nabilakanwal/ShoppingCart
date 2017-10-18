@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {MatToolbarModule, MatIconModule, MatCardModule, MatListModule, MatInputModule, MatFormFieldModule, MatMenuModule, MatButtonModule, MatButtonToggleModule, MatTabsModule} from '@angular/material';
 import {FormControl, Validators} from '@angular/forms';
+import { AngularFireModule } from 'angularfire2';
+import {  FirebaseListObservable } from 'angularfire2/database-deprecated';  //FirebaseListObservable
+
 import { DbserviceService } from '../../services/dbservice.service';
 
 
@@ -13,7 +16,8 @@ export class HomeComponent implements OnInit {
     displayViewCartBtn : Boolean = false;
     displayProductsArr;
     viewCartBtn;
-    shopProducts : any = [];
+    // shopProducts : any = [];
+     shopProduct$ : FirebaseListObservable<any>[] = [];
     viewbtn = {
 
     }
@@ -34,16 +38,14 @@ export class HomeComponent implements OnInit {
    }
 
 
-    productAddinCart(productData){
-     console.log("Adding product in cart:");  
-      this.displayViewCartBtn = true;
-      this.viewbtn[productData.key] = true;  
-      this.shopProducts.push(productData);
-      console.log(productData);
+     addProductinCart(item){
+     console.log("Adding product in cart:", item );  
+      this.viewbtn[item.key] = true;  
+      this.shopProduct$.push(item);
+      console.log(this.shopProduct$);
    }
-
    viewCart(){
-      let cartData = this.shopProducts;
+      // let cartData = this.shopProducts;
       // this.router.navigate(['/cart', { prodObj : cartData }]);
    }
 
