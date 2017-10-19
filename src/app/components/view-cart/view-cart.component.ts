@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableModule, MatSliderModule, MatListModule, MatIconModule,  MatButtonModule, MatGridListModule, MatTabsModule, MatFormFieldModule} from '@angular/material';
+import {Router} from "@angular/router";
 
 import { AngularFireModule } from 'angularfire2';
 import {  FirebaseListObservable } from 'angularfire2/database-deprecated';  //FirebaseListObservable
@@ -18,7 +19,7 @@ export class ViewCartComponent implements OnInit {
   itemsFromStorage;
   totalAmount = null;
 
-  constructor(private dbService : DbserviceService, private af : AngularFireModule) { 
+  constructor(private dbService : DbserviceService, private af : AngularFireModule, public router: Router) { 
     let self = this;
      console.log("View Constructor");
       self.itemsFromStorage = JSON.parse(localStorage.getItem("itemsArr"));
@@ -66,6 +67,8 @@ export class ViewCartComponent implements OnInit {
       // localStorage.removeItem(this.itemsFromStorage);
       localStorage.clear();
       alert("Your Order has been confirmed. \n Order will be delivered to your door step please pay cash on delivery");
+        this.router.navigate(['/home']);
+
     }
 
 
