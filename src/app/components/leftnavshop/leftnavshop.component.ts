@@ -12,7 +12,7 @@ export class LeftnavshopComponent implements OnInit {
   disabled = false;
   invert = false;
   max = 10000;
-  min = 100;
+  min = 500;
   showTicks = false;
   step = 1;
   thumbLabel = false;

@@ -1,9 +1,38 @@
+@media only screen and (max-width: 860px) and (min-width: 751px){
+
+    .example-card{
+        width: 45% !important;
+    }
+    .shopMainDiv{
+        width: 100%;
+    }
+    .lefNav_container{
+    width: 25%;
+    display: inline-block;
+    float: left;
+}
+.shopProduct_container{
+    width: 70%;
+    display: inline-block;
+}
+}
+@media only screen and (max-width: 750px) {
+    
+   
+    .example-card{
+        width: 45% !important;
+    }
+}
+
 .lefNav_container{
     width: 23%;
     display: inline-block;
     float: left;
 }
-
+.actBtnsCss{
+    width: 100%;
+    left: 0.1em;
+}
 .shopProduct_container{
         width: 75%;
     display: inline-block;
