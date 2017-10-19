@@ -32,18 +32,45 @@ export class HomeComponent implements OnInit {
   ];
 
   constructor(private dbService : DbserviceService) {
-    this.dbService.getProductsList((productsArr)=>{
-        this.displayProductsArr = productsArr;
+    let self = this;
+    self.dbService.getProductsList((productsArr)=>{
+        self.displayProductsArr = productsArr;
       });
+
+      let chkStorage = JSON.parse(localStorage.getItem("itemsArr"));
+      if(chkStorage){
+          chkStorage.forEach(function (value) {
+            self.viewbtn[value.key] = true;
+            // console.log("self.viewbtn[value.key]", self.viewbtn[value.key]);
+            console.log("value.key", value.key);
+            
+        });
+
+      }
    }
 
 
-     addProductinCart(item){
-     console.log("Adding product in cart:", item );  
-      this.viewbtn[item.key] = true;  
+  //    addProductinCart(item){
+  //    console.log("Adding product in cart:", item );  
+  //     this.viewbtn[item.key] = true;  
+  //     this.shopProduct$.push(item);
+  //     console.log(this.shopProduct$);
+  //  }
+
+   addProductinCart(item){
+    //  debugger
+      console.log("Adding product in cart:", item ); 
       this.shopProduct$.push(item);
-      console.log(this.shopProduct$);
+      console.log("this.shopProduct$", this.shopProduct$);
+      localStorage.setItem("itemsArr", JSON.stringify(this.shopProduct$));
+      this.viewbtn[item.key] = true; 
+      console.log("this.viewbtn[item.key]", this.viewbtn[item.key]);
+      console.log("item.key", item.key);
+          
    }
+
+
+
    viewCart(){
       // let cartData = this.shopProducts;
       // this.router.navigate(['/cart', { prodObj : cartData }]);

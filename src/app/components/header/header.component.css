@@ -211,7 +211,37 @@ a:focus {
 a:hover, a:active {
   outline: 0;
 }
+@media only screen and (max-width: 750px) and (min-width: 651px){
+    .accBtn{
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 12px !important;
+    }
+    .cartBtn{
+    width: 41px !important;
+    font-size: 9px !important;
+    padding: 0px !important;
+    top: 6em !important;
+    position: absolute;
+    left: 26em;
+    }
+    .searchContainer{
+        display: none !important;
+    }
+}
 @media only screen and (max-width: 650px){
+    .cartBtn{
+    width: 41px !important;
+    font-size: 9px !important;
+    padding: 0px !important;
+    top: 6em !important;
+    position: absolute;
+    left: 26em;
+    }
+    .searchContainer{
+        display: none !important;
+    }
+
         .emailContainer{
             width: 50%
         }
@@ -228,4 +258,19 @@ a:hover, a:active {
         .topHeaderContainer .mat-toolbar-row{
             display: block !important;
         }
+        .topHeaderContainer .mat-toolbar-row{
+            display: block !important;
+        }
+        .topHeaderContainer {
+            width: 100%;
+            background: #2b2e34 !important;
+            color: #FFF;
+            vertical-align: middle;
+            /* height: 54px; */
+            display: inline-block;
+}
+
+.mat-toolbar-row{
+    display: inline !important;
+}
 }

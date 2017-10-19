@@ -43,7 +43,7 @@ export class ShopComponent implements OnInit {
    }
 
    addProductinCart(item){
-     debugger
+    //  debugger
      console.log("Adding product in cart:", item ); 
       // let cust = this.dbService.user;
       this.shopProduct$.push(item);

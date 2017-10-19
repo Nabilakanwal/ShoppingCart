@@ -46,24 +46,56 @@
                   </mat-grid-tile>
         </mat-grid-list>
 
-	  <div class="product_container" flex-sm="25" flex-gt-sm="30" flex="100">		
-      <mat-card class="example-card" *ngFor="let prod of displayProductsArr">				
-			<div class="holder">        		
-			<mat-card-content>		
-            <p><img mat-card-image src="{{prod.product.pImgURL}}" style="width: 243px; height: 286px" alt="Photo of a Shiba Inu"></p>		
-            <mat-card-title>{{prod.product.pName}}</mat-card-title>		
-            <p style="font-weight: 900;font-size: 18px;">  $ {{prod.product.pPrice}} </p>		
-            </mat-card-content>		
-            <!--<mat-card-actions>		
-                  <button mat-raised-button  color="warn">Add To Cart</button>		
-        	</mat-card-actions>	-->
-            <mat-card-actions> 
-                      <button mat-raised-button  color="warn"  *ngIf="!viewbtn[prod.key]"  (click)="addProductinCart(prod)" > <mat-icon>shopping_cart</mat-icon> Add To Cart</button> 
-                      <!--after in cart-->
-                      <button mat-raised-button  color="warn"  *ngIf="viewbtn[prod.key]"  (click)="productAddinCart(prod)" > <mat-icon>shopping_cart</mat-icon> Add To Cart <i class="material-icons">done</i> </button>
-                       <button mat-raised-button  color="warn" *ngIf="viewbtn[prod.key]" >View Cart</button>
-            </mat-card-actions>
-		</div>	
-    	</mat-card>		
-    	</div>
-
+	<div class="product_container" flex-sm="25" flex-gt-sm="30" flex="100">		
+    <mat-card class="example-card" *ngFor="let prod of displayProductsArr">				
+		<div class="holder">        		
+		<mat-card-content>		
+        <p><img mat-card-image src="{{prod.product.pImgURL}}" style="width: 243px; height: 286px" alt="Photo of a Shiba Inu"></p>		
+        <mat-card-title>{{prod.product.pName}}</mat-card-title>		
+        <p style="font-weight: 900;font-size: 18px;">  $ {{prod.product.pPrice}} </p>		
+        </mat-card-content>		
+        <!--<mat-card-actions>		
+      <button mat-raised-button  color="warn">Add To Cart</button>		
+        </mat-card-actions>	-->
+        <mat-card-actions> 
+            <button mat-raised-button  color="warn"  *ngIf="!viewbtn[prod.key]"  (click)="addProductinCart(prod)" > <mat-icon>shopping_cart</mat-icon> Add To Cart</button> 
+                <!--after in cart-->
+                <button style="font-size: 12px;" mat-raised-button  color="warn"  *ngIf="viewbtn[prod.key]"  (click)="addProductinCart(prod)" > <mat-icon>shopping_cart</mat-icon> Add To Cart <i class="material-icons">done</i> </button>
+                <button style="font-size: 12px;" mat-raised-button  color="warn" *ngIf="viewbtn[prod.key]"  routerLink="/cart" >View Cart</button>
+        </mat-card-actions>
+	    </div>	
+    </mat-card>		
+    </div>
+    <div class="advertise_container" flex-sm="25" flex-gt-sm="30" flex="100">		
+    <mat-card class="advertise_container-card">				
+		<div class="holder">        		
+		<mat-card-content>		
+        <div class="sale_caption">
+            <span class="lineOne"><h3 style="color: white;font-size: 16px;margin: 0;position: absolute;top: -12px;left: 86px;"> SAVE UP TO </h3></span>
+            <span class="lineTwo"><h1 style="color: white;font-size: 65px;margin: 0;position: absolute;top: 0;left: 1.28em;">50%</h1></span>
+			<span class="lineThree"><p style="color: white;font-size: 16px;margin: 0;position: absolute;left: 51px;top: 5em;"> ON OUR GALLA DRESSES</p> </span>
+			<button mat-raised-button  color="warn" style="position: absolute;top: 8em;left: 6em;">View Cart</button>
+        </div>		
+        </mat-card-content>		
+	    </div>	
+    </mat-card>		
+    </div>
+    <div class="advertise_container2" flex-sm="25" flex-gt-sm="30" flex="100">		
+    <mat-card class="advertise_container-card2">				
+		<div class="holder">        		
+		<mat-card-content>		
+        	
+        </mat-card-content>		
+	    </div>	
+    </mat-card>		
+    </div>
+    <div class="advertise_container3" flex-sm="25" flex-gt-sm="30" flex="100">		
+    <mat-card class="advertise_container-card3">				
+		<div class="holder">        		
+		<mat-card-content>		
+        	
+        </mat-card-content>		
+	    </div>	
+    </mat-card>		
+    </div>
+    
