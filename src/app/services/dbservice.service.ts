@@ -54,7 +54,7 @@ export class DbserviceService {
   }
 
 
-   saveCartItems(data, custID) {
+   saveCartItems(data) {
         console.log("Going to save in DB");
          this.cartRef.push({ ShopItems: data });
       }

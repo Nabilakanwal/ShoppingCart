@@ -1,37 +1,42 @@
-<p>
-  view-cart works!
-</p>
-<div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource">
+<h2> Cart </h2>
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
+      
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-    </ng-container>
+  <div>
+      <mat-card>
+            <table style="width:80%">
+            <thead>
+                <tr>
+                <th>Remove</th>
+                <th>Item Image</th> 
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tbody *ngFor="let item of itemsFromStorage"  >
+                <tr>
+                <td><button mat-button (click)="removeItem(item)"> <i class="material-icons">delete</i> </button> </td>
+                <td> <img src="{{item.product.pImgURL}}" alt="Item image" style="width: 70px;height: 70px;"/>  </td> 
+                <td> {{item.product.pName}} </td>
+                <td> {{item.product.pPrice}} </td>
+                <td> 1 </td> 
+                <td> {{item.product.pPrice}} </td>
+            </tr>
+            </tbody>        
+          </table>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-    </ng-container>
+          <div class="bottom-container">
+                <mat-card-content >
+                    <h2>Cart totals</h2>
+                    <p><b>Sub Amount : </b>  <span>{{totalAmount}}</span></p>
+                    <p><b>Total Amount : </b>  <span>{{totalAmount}}</span></p>
+                    <button mat-raised-button  color="warn" block  (click)="checkOut(itemsFromStorage)"> Proceed to Checkout  </button> 
+              </mat-card-content>    
+          </div> 
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
-    </ng-container>
 
-    <!-- Color Column -->
-    <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
-    </ng-container>
+      </mat-card>
+  </div>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
-</div>

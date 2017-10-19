@@ -1,0 +1,19 @@
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray;
+    border: 2px solid black;
+}
+
+td{
+  border: 1px solid black;
+  text-align: center;
+}
+
+.bottom-container{
+    margin-left: 55%;
+    /*border: 2px solid black;*/
+    padding: 15px;
+    width: 22%;
+}
