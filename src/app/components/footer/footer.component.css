@@ -47,7 +47,8 @@
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
-    width: 25%;
+    width: 20%;
+    /* float: left; */
     display: inline-block;
     float: left;
 }
@@ -97,7 +98,17 @@ padding: 20px;
     width: 100% !important;
     /* margin: auto; */
     text-align: center !important;
-    }
+}
+.colLayout{
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 45%;
+    /* flat: left; */
+    display: inline-block;
+    float: left;
+}
 }
 
 

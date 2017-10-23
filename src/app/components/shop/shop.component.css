@@ -9,7 +9,6 @@
     .lefNav_container{
     width: 25%;
     display: inline-block;
-    float: left;
 }
 .shopProduct_container{
     width: 70%;
@@ -27,7 +26,6 @@
 .lefNav_container{
     width: 23%;
     display: inline-block;
-    float: left;
 }
 .actBtnsCss{
     width: 100%;
