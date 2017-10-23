@@ -16,13 +16,16 @@ import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
-//service
-import { DbserviceService } from './services/dbservice.service';
 import { LeftnavshopComponent } from './components/leftnavshop/leftnavshop.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ViewCartComponent } from './components/view-cart/view-cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+//service
+import { DbserviceService } from './services/dbservice.service';
+import { AuthService } from './services/auth.service';
+
+
 
 
 
@@ -103,7 +106,7 @@ export const firebaseConfig = {
       }
     ])
   ],
-  providers: [ DbserviceService ],
+  providers: [ DbserviceService , AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

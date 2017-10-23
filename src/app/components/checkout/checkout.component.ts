@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, NgForm} from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { DbserviceService } from '../../services/dbservice.service';
+import { AuthService } from '../../services/auth.service';
+
+
 
 @Component({
   selector: 'app-checkout',
@@ -8,6 +13,8 @@ import { DbserviceService } from '../../services/dbservice.service';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
+  public isLoggedIn;
+  public user$ = this.authservice.user;
   checked = false;
   displayPswrdField : Boolean  = false;
 
@@ -19,6 +26,7 @@ export class CheckoutComponent implements OnInit {
     {value: 'KSA-4', viewValue: 'KSA'},
     {value: 'Japan-5', viewValue: 'Japan'}
   ];
+
   states = [
     {value: 'Sindh-0', viewValue: 'Sindh'},
     {value: 'Punjab-1', viewValue: 'Punjab'},
@@ -26,8 +34,12 @@ export class CheckoutComponent implements OnInit {
     {value: 'Khyber-3', viewValue: 'Khyber Pakhtunkhwa'}
   ];
 
-  constructor() {
+  constructor(private authservice : AuthService, private router : Router, private ddbServiceb: DbserviceService) {
     console.log("ChecOut constructor Work");
+    authservice.isAuthenticated()
+                .subscribe(
+                  success => this.isLoggedIn = success
+                );
     
     
    }
@@ -41,7 +53,34 @@ export class CheckoutComponent implements OnInit {
 
    onSubmitBilling(formValue) {
     console.log("save Billing detail: ", formValue);
+    console.log("save Billing detail: ", formValue.email);
+    console.log("save Billing detail: ", formValue.password);
+    
+    //Login Section
+    // this.authservice.login(formValue.email, formValue.password)
+    //      .subscribe(
+    //         //  success => this.router.navigate(['/addproduct']),
+    //          success => alert(success),            
+    //          error => alert( error)
+    //      );
+    if(formValue.createAccount){
+      this.signup(formValue.email, formValue.password);
+    }
+    else{
+      let savedUser = this.authservice.isAuthenticated();
+      console.log("savedUser-->", savedUser);
+    }
+
   }
+
+  signup(email, password){
+         this.authservice.signup(email, password);
+      }
+  
+  logOut(){
+        this.authservice.logout();
+        this.router.navigate(['/']);
+      }
 
   ngOnInit() {
   }
