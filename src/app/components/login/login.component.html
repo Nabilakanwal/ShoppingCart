@@ -1,0 +1,48 @@
+<p>
+  login works!
+</p>
+
+<mat-card>
+    <div>
+        <p><a routerLink="/home" >Home</a> /  <a routerLink="/shop" >Shop</a>  /  <a routerLink="/myAccount" >My account</a> </p>        
+    </div>  
+    <div  class="login_container" *ngIf="!isResetPaswrd">
+      <form class="contact-form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+            <mat-form-field class="example-full-width formInput">
+                <label for="email">Username or email </label>
+                    <div><input class="inputCss" matInput type="text" name="email" ngModel required/></div>
+            </mat-form-field>
+              <br/>
+            <mat-form-field class="example-full-width formInput">
+                  <label for="password">Password</label>
+                      <div><input class="inputCss" matInput type="password" name="password" ngModel required/></div>
+            </mat-form-field>
+               <br/><br/>       
+            <button mat-raised-button color="warn" type="submit" >Login</button>
+                <br/>
+            <mat-checkbox class="example-margin" name="rememberMe" ngModel (ngModelChange)="onChkboxChange($event)" > Remember Me </mat-checkbox>                    
+    </form>
+      <br/><br/>
+      <a (click)="showResetContainer()"> Lost your password? </a>
+    </div>
+
+    <div  class="resetPaswrd_container" *ngIf="isResetPaswrd">
+      <h1>  LOST PASSWORD  </h1>
+      <br/>
+      <p>Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.</p>
+      <br/>
+      <form class="contact-form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+            <mat-form-field class="example-full-width formInput">
+                <label for="email">Username or Email address</label>
+                    <div><input class="inputCss" matInput type="text" name="lostemail" ngModel required/></div>
+            </mat-form-field>
+            <br><br>
+            <button mat-raised-button color="warn" type="submit" >  Reset Password  </button> 
+      </form>     
+      
+    </div>
+    
+
+
+
+</mat-card>

@@ -55,13 +55,7 @@ export class CheckoutComponent implements OnInit {
     console.log("save Billing detail: ", formValue);
     console.log("save Billing detail: ", formValue.email);
     console.log("save Billing detail: ", formValue.password);
-    //Login Section
-    // this.authservice.login(formValue.email, formValue.password)
-    //      .subscribe(
-    //         //  success => this.router.navigate(['/addproduct']),
-    //          success => alert(success),            
-    //          error => alert( error)
-    //      );
+   
     if(formValue.createAccount){
       console.log("Save Customer profile && register -->", formValue);      
       this.signup(formValue.email, formValue.password);

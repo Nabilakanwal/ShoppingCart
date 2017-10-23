@@ -24,6 +24,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 //service
 import { DbserviceService } from './services/dbservice.service';
 import { AuthService } from './services/auth.service';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -50,7 +51,8 @@ export const firebaseConfig = {
     ShopComponent,
     ProductDetailComponent,
     ViewCartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -103,6 +105,10 @@ export const firebaseConfig = {
       {
          path: 'checkout',
          component: CheckoutComponent
+      },
+      {
+         path: 'myAccount',
+         component: LoginComponent
       }
     ])
   ],
