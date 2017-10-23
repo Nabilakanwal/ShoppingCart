@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatToolbarModule, MatIconModule, MatCardModule, MatInputModule, MatFormFieldModule, MatMenuModule, MatButtonModule, MatButtonToggleModule, MatTabsModule} from '@angular/material';
 import {FormControl, Validators} from '@angular/forms';
+import { DbserviceService } from '../../services/dbservice.service';
+
 
 
 @Component({
@@ -10,7 +12,14 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dbService : DbserviceService) { 
+
+  }
+
+  onSubmit(feedBackValue){
+    console.log("save product detail: ", feedBackValue);
+    this.dbService.saveFeedBack(feedBackValue);
+  }
 
   ngOnInit() {
   }

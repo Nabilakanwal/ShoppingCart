@@ -41,28 +41,28 @@
       <mat-grid-list cols="2" rowHeight="1:1" class="contactsOpts">
         <mat-grid-tile class="contactForm_container">
              
-                <form class="contact-form">
+                <form class="contact-form" #feedBackForm="ngForm" (ngSubmit)="onSubmit(feedBackForm.value)">
                       <mat-form-field class="example-full-width formInput">
                         <label for="name">Your Name (required)</label>
-                        <div><input class="inputCss" matInput /></div>
+                        <div><input class="inputCss" matInput name="name" ngModel required/></div>
                       </mat-form-field>
 
                       <mat-form-field class="example-full-width formInput">
                         <label for="email">Your Email (required)</label>
-                        <div><input class="inputCss" matInput /></div>
+                        <div><input class="inputCss" matInput name="email" ngModel required/></div>
                       </mat-form-field>
 
                       <mat-form-field class="example-full-width formInput">
                         <label for="subject">Subject</label>
-                        <div><input class="inputCss" matInput /></div>
+                        <div><input class="inputCss" matInput name="subject" ngModel/></div>
                       </mat-form-field>
 
                       <mat-form-field class="example-full-width">
-                          <label for="message">Your Message</label><br/>
-                          <textarea matInput ></textarea>
+                          <label for="message">Your Message</label><br/><br/>
+                          <textarea matInput name="message" ngModel required></textarea>
                       </mat-form-field>
 
-                       <button mat-raised-button color="warn">Send</button>
+                       <button mat-raised-button color="warn" type="submit" >Send</button>
                 </form>
               
         </mat-grid-tile>

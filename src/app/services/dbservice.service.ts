@@ -16,12 +16,14 @@ export class DbserviceService {
       products: Observable<any[]>;
       cartRef: AngularFireList<any>;
       cartItems: Observable<any[]>;
+      feedBackRef: AngularFireList<any>;
       
 
   constructor(db: AngularFireDatabase, public afAuth: AngularFireAuth) { 
         this.user = this.afAuth.authState;   // only triggered on sign-in/out (for old behavior use .idToken)
         this.productRef = db.list('products');
         this.cartRef = db.list('cartItems');
+        this.feedBackRef = db.list('customerFeedBack');
         
         // this.getProductsList();
   }
@@ -81,6 +83,11 @@ export class DbserviceService {
       //  return  this.productArr;
   }
 
+  saveFeedBack(custFeedBack) {
+        console.log("Going to save saveFeedBack in DB");
+         this.feedBackRef.push({ custFeedBack });
+         }
+
 
    login() {
             this.afAuth.auth.signInAnonymously();
@@ -89,5 +96,6 @@ export class DbserviceService {
     logout() {
             this.afAuth.auth.signOut();
     }
+
 
 }
