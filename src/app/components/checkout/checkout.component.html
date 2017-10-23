@@ -1,0 +1,107 @@
+<p>
+  checkout works!
+</p>
+
+<mat-card>
+      <p>Returning customer?
+          Click here to login</p>
+          
+      <p>Have a coupon?
+    Click here to enter your code</p>
+
+</mat-card>
+
+ <mat-card class="addProductContainer">
+    <mat-card-header>
+      <mat-card-title>
+        <span>Billing details</span>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form  #authForm="ngForm" (ngSubmit)="onSubmitBilling(authForm.value)">
+        <table  cellspacing="0">
+
+            <tr>
+                <mat-input-container class="full-width">
+                  <input matInput type="text" placeholder="First Name" name="firstName" ngModel
+                        required autofocus firstName>
+                </mat-input-container>
+                  <td>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     </td>
+                <mat-input-container class="full-width">
+                  <input matInput type="text" placeholder="Last Name" name="last_Name" ngModel
+                        required autofocus lastName>
+                </mat-input-container>
+            </tr>
+           
+            <tr>
+                <mat-input-container class="full-width">
+                  <input matInput type="text" placeholder="Company Name" name="companyName" ngModel
+                        required autofocus companyName>
+                </mat-input-container>
+            </tr>
+            <tr>
+                  <mat-form-field>
+                    <mat-select placeholder="Select Country" name="selectedCountry" ngModel>
+                      <mat-option *ngFor="let country of countries" [value]="country.value">
+                        {{ country.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </tr>
+           <tr>
+                <mat-input-container class="full-width">
+                  <input matInput type="text" placeholder="Street Address" name="streetAddress" ngModel
+                        required autofocus streetAddress>
+                </mat-input-container>
+            </tr>
+           <tr>
+                <mat-input-container class="full-width">
+                  <input matInput type="text" placeholder="City" name="city" ngModel
+                        required autofocus city>
+                </mat-input-container>
+            </tr>
+            <tr>
+                  <mat-form-field>
+                    <mat-select placeholder="Select State" name="selectedState" ngModel>
+                      <mat-option *ngFor="let state of states" [value]="state.value">
+                        {{ state.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </tr>
+            <tr>
+                <mat-input-container class="full-width">
+                  <input matInput type="number" placeholder="zip code" name="zip" ngModel
+                        required autofocus zip>
+                </mat-input-container>
+            </tr>
+             <tr>
+                <mat-input-container class="full-width">
+                  <input matInput type="number" placeholder="Enter Phone number" name="phone" ngModel
+                        required autofocus phone>
+                </mat-input-container>
+                  <td>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        </td>          
+                <mat-input-container class="full-width">
+                  <input matInput type="email" placeholder="Email ID" name="email" ngModel
+                        required autofocus email>
+                </mat-input-container>
+            </tr>
+            <tr>
+              <mat-checkbox class="example-margin" name="createAccount" ngModel (ngModelChange)="onChkboxChange($event)" > Create Account ? </mat-checkbox>
+            </tr>
+             <tr *ngIf="displayPswrdField">
+                <mat-input-container class="full-width" >
+                  <input matInput type="password" placeholder="password" name="password" ngModel
+                        required autofocus password>
+                </mat-input-container>
+            </tr>
+            <tr>  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  </tr>
+
+        </table>
+
+        <button class="submit-btn" type="submit" mat-raised-button color="primary" [disabled]="!authForm.form.valid">Add Product in List</button>
+        
+      </form>
+    </mat-card-content>
+  </mat-card>

@@ -10,7 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule, MatButtonToggleModule, MatTableModule, MatSliderModule, MatListModule, MatIconModule, MatSelectModule, MatInputModule, MatCardModule, MatMenuModule, MatButtonModule, MatGridListModule, MatTabsModule, MatFormFieldModule} from '@angular/material';
+import {MatToolbarModule, MatButtonToggleModule, MatCheckboxModule, MatTableModule, MatSliderModule, MatListModule, MatIconModule, MatSelectModule, MatInputModule, MatCardModule, MatMenuModule, MatButtonModule, MatGridListModule, MatTabsModule, MatFormFieldModule} from '@angular/material';
 import { HeaderComponent } from './components/header/header.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
@@ -22,6 +22,7 @@ import { LeftnavshopComponent } from './components/leftnavshop/leftnavshop.compo
 import { ShopComponent } from './components/shop/shop.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ViewCartComponent } from './components/view-cart/view-cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 
@@ -45,7 +46,8 @@ export const firebaseConfig = {
     LeftnavshopComponent,
     ShopComponent,
     ProductDetailComponent,
-    ViewCartComponent
+    ViewCartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +68,7 @@ export const firebaseConfig = {
     MatSelectModule,
     MatTableModule,
     MatSliderModule,
+    MatCheckboxModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -93,6 +96,10 @@ export const firebaseConfig = {
       {
          path: 'cart',
          component: ViewCartComponent
+      },
+      {
+         path: 'checkout',
+         component: CheckoutComponent
       }
     ])
   ],

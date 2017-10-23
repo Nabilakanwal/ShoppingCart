@@ -67,7 +67,9 @@ export class ViewCartComponent implements OnInit {
       // localStorage.removeItem(this.itemsFromStorage);
       localStorage.clear();
       alert("Your Order has been confirmed. \n Order will be delivered to your door step please pay cash on delivery");
-        this.router.navigate(['/home']);
+        // this.router.navigate(['/home']);
+        this.router.navigate(['/checkout']);
+        
 
     }
 
