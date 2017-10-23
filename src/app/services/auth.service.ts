@@ -8,10 +8,13 @@ import { AngularFireDatabase, AngularFireAction, AngularFireList  } from 'angula
 @Injectable()
 export class AuthService {
   public user: Observable<firebase.User>;
-  usersRef: AngularFireList<any>;
+  customersRef: AngularFireList<any>;
+  
 
-  constructor(private afAuth : AngularFireAuth ) {
+  constructor(private afAuth : AngularFireAuth, db: AngularFireDatabase ) {
       this.user = afAuth.authState;
+      this.customersRef = db.list('customersProfile');
+
    }
 
    login(email, password): Observable<any> {
@@ -29,14 +32,9 @@ export class AuthService {
   }
 
   signup(email, password){
-      let data = {
-        email: email,
-        password: password
-      }
-
-         this.afAuth.auth.createUserWithEmailAndPassword(email, password).then(function(user) {
-          // User is created and signed in, do whatever is needed           
-           this.usersRef.push({ user: data });
+      this.afAuth.auth.createUserWithEmailAndPassword(email, password).then(function(user) {
+          // User is created and signed in, do whatever is needed    
+           
         }).catch(function(error) {
           // Handle Errors here.
           var errorCode = error.code;
@@ -46,6 +44,12 @@ export class AuthService {
           // console.log();
         });
     }
+
+    saveCustomerProfile(customer){
+      console.log("Going to save customer Profile:", customer);
+      this.customersRef.push({ customer });             
+    }
+
 
 
 

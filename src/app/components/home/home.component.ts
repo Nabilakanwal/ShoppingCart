@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatToolbarModule, MatIconModule, MatCardModule, MatListModule, MatInputModule, MatFormFieldModule, MatMenuModule, MatButtonModule, MatButtonToggleModule, MatTabsModule} from '@angular/material';
 import {FormControl, Validators} from '@angular/forms';
-import { AngularFireModule } from 'angularfire2';
+import {  AngularFireModule } from 'angularfire2';
 import {  FirebaseListObservable } from 'angularfire2/database-deprecated';  //FirebaseListObservable
 
 import { DbserviceService } from '../../services/dbservice.service';
@@ -49,13 +49,6 @@ export class HomeComponent implements OnInit {
       }
    }
 
-
-  //    addProductinCart(item){
-  //    console.log("Adding product in cart:", item );  
-  //     this.viewbtn[item.key] = true;  
-  //     this.shopProduct$.push(item);
-  //     console.log(this.shopProduct$);
-  //  }
 
    addProductinCart(item){
     //  debugger

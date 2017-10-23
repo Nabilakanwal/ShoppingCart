@@ -35,17 +35,12 @@ export class ShopComponent implements OnInit {
             
         });
 
-      }
-
-      // const cartProducts$ = af.database.object('products/-KwVknBQWSFsI2R8uoEy');
-      
-      
+      }   
    }
 
    addProductinCart(item){
     //  debugger
      console.log("Adding product in cart:", item ); 
-      // let cust = this.dbService.user;
       this.shopProduct$.push(item);
       console.log("this.shopProduct$", this.shopProduct$);
       localStorage.setItem("itemsArr", JSON.stringify(this.shopProduct$));
@@ -55,8 +50,6 @@ export class ShopComponent implements OnInit {
             console.log("item.key", item.key);
           
    }
-
-    // this.router.navigate(['/cart', { prodObj : productData }]);
 
   ngOnInit() {
   }

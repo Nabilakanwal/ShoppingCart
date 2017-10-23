@@ -55,7 +55,6 @@ export class CheckoutComponent implements OnInit {
     console.log("save Billing detail: ", formValue);
     console.log("save Billing detail: ", formValue.email);
     console.log("save Billing detail: ", formValue.password);
-    
     //Login Section
     // this.authservice.login(formValue.email, formValue.password)
     //      .subscribe(
@@ -64,18 +63,21 @@ export class CheckoutComponent implements OnInit {
     //          error => alert( error)
     //      );
     if(formValue.createAccount){
+      console.log("Save Customer profile && register -->", formValue);      
       this.signup(formValue.email, formValue.password);
+      this.authservice.saveCustomerProfile(formValue);
     }
     else{
-      let savedUser = this.authservice.isAuthenticated();
-      console.log("savedUser-->", savedUser);
+      // let savedUser = this.authservice.isAuthenticated();
+      console.log("Just Save Customer profile not register -->", formValue);
+      this.authservice.saveCustomerProfile(formValue);      
     }
 
   }
 
   signup(email, password){
-         this.authservice.signup(email, password);
-      }
+      this.authservice.signup(email, password);
+  }
   
   logOut(){
         this.authservice.logout();
