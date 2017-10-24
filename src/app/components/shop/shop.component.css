@@ -9,6 +9,7 @@
     .lefNav_container{
     width: 25%;
     display: inline-block;
+    float: left;
 }
 .shopProduct_container{
     width: 70%;
@@ -21,26 +22,43 @@
     .example-card{
         width: 45% !important;
     }
-}
+    .lefNav_container{
+    width: 100% !important;
+    display: inline-block;
+    float: left;
+    }
 
+.shopMainDiv{
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+}
+}
 .lefNav_container{
+    width: 25%;
+    display: inline-block;
+    float: left;
+}
+/*.lefNav_container{
     width: 23%;
     display: inline-block;
-}
+    float: left;
+}*/
 .actBtnsCss{
     width: 100%;
     left: 0.1em;
 }
+
 .shopProduct_container{
         width: 75%;
     display: inline-block;
 }
 .shopMainDiv{
-    width: 1170px;
+    width: 90%;
     margin-right: auto;
     margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    /*padding-left: 15px;
+    padding-right: 15px;*/
 }
 .example-card{
        width: 15%;

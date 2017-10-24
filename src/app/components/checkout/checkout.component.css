@@ -1,3 +1,23 @@
 .example-margin {
   margin: 0 10px;
 }
+.fa-user{
+  border: 1px solid black;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    vertical-align: top;
+}
+.returnCustDiv{
+  width: 50%;
+      display: inline-block;
+}
+.CouponCustDiv{
+  width: 50%;
+      display: inline-block;
+      float: right;
+}
+a.linkStyle{
+  text-decoration: none;
+  color: #F66249;
+}

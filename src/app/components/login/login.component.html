@@ -4,7 +4,7 @@
 
 <mat-card>
     <div>
-        <p><a routerLink="/home" >Home</a> /  <a routerLink="/shop" >Shop</a>  /  <a routerLink="/myAccount" >My account</a> </p>        
+        <p><a routerLink="/home" style="color: grey" >Home</a> /  <a routerLink="/shop" style="color: grey" >Shop</a>  /  <a routerLink="/myAccount" style="color: grey" >My account</a> </p>        
     </div>  
     <div  class="login_container" *ngIf="!isResetPaswrd">
       <form class="contact-form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">

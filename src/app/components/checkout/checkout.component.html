@@ -2,16 +2,30 @@
   checkout works!
 </p>
 
-<mat-card>
-      <p>Returning customer?
-          Click here to login</p>
+<div style="width: 100%">
+<mat-card style="width: 50%">
+  
+  <h2>CHECKOUT</h2>
+      <div class="returnCustDiv">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <div style="display: inline-block;margin: -4px 6px;">Returning customer? <br/>
+          <a href="/" class="linkStyle">Click here to login</a>
+        </div>
+        
+      </div>
+      <div class="CouponCustDiv">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <div style="display: inline-block;margin: -4px 6px;">Have a coupon? <br/>
+          <a href="/" class="linkStyle"> Click here to enter your code</a>
+        </div>
+        
+      </div>
           
-      <p>Have a coupon?
-    Click here to enter your code</p>
+    
 
 </mat-card>
 
- <mat-card class="addProductContainer">
+ <mat-card class="addProductContainer" style="width: 50%">
     <mat-card-header>
       <mat-card-title>
         <span>Billing details</span>
@@ -100,8 +114,10 @@
 
         </table>
 
-        <button class="submit-btn" type="submit" mat-raised-button color="primary" [disabled]="!authForm.form.valid">Add Product in List</button>
+        <button class="submit-btn" type="submit" mat-raised-button color="primary" [disabled]="!authForm.form.valid"> Proceed to Payment </button>
         
       </form>
     </mat-card-content>
+    
   </mat-card>
+  </div>

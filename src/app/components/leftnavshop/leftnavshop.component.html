@@ -1,33 +1,168 @@
 
- <h4>Home/Shop</h4>
+ <h5 style="color: grey"><a routerLink="/home" style="color: grey" > Home </a> / Shop</h5>
 
 <div class="serach_area">
-  <mat-input-container >
+  <mat-input-container style="width: 95%">
            <input  matInput type="search" placeholder="Search" id="sampleSearchInput" ngModel />
   </mat-input-container>
   <p>
    <button mat-raised-button color="warn">Search</button>    
   </p>
 </div>
+<div>
+    <mat-slider
+        class="example-margin"
+            [disabled]="disabled"
+            [invert]="invert"
+            [max]="max"
+            [min]="min"
+            [step]="step"
+            [thumb-label]="thumbLabel"
+            [tick-interval]="tickInterval"
+            [value]="value"
+            [vertical]="vertical"
+    >
+    </mat-slider>
+    <div class="sliderChangeVal">
+      <p style="display: inline-block;float: right;margin: 0;font-size: 13px;color: grey"><span><b>Price: ${{min}}</b></span> 
+      <span> - </span> 
+      <span><b>${{max}}</b></span></p>
+      <button mat-raised-button color="warn" style="display: inline-block;float: left;margin: 0">Filter</button>    
+    </div>
+</div>
+<br/>
+<div class="productsLeftBar">
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\prod1.jpg" style="float: right">
+        <span>Marina Style</span>
+        
+      </a>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\prod2.jpg" style="float: right">
+        <span>Amari Shirt</span>
+        
+      </a>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\abaya.jpg" style="float: right">
+        <span>Maracara Sleeveless Dress</span>
+        
+      </a>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\prod2.jpg" style="float: right">
+        <span>Manago Shirt</span>
+        
+      </a>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\sweaters.jpg" style="float: right">
+        <span>Blue Sweaters</span>
+      </a>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
 
-  <div>
-          <mat-slider
-         class="example-margin"
-              [disabled]="disabled"
-              [invert]="invert"
-              [max]="max"
-              [min]="min"
-              [step]="step"
-              [thumb-label]="thumbLabel"
-              [tick-interval]="tickInterval"
-              [value]="value"
-              [vertical]="vertical"
-      >
-      </mat-slider>
-      <p><span><b>{{min}}</b></span> 
-      <span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span> 
-      <span><b>{{max}}</b></span></p>
-      <p>
-        <button mat-raised-button color="warn">Filter</button>    
-        </p>
-  </div>
+
+<div class="productsLeftBarSection2">
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\prod1.jpg" style="float: right">
+        <span>Marina Style</span>
+        
+      </a>
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\prod2.jpg" style="float: right">
+        <span>Amari Shirt</span>
+        
+      </a>
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\abaya.jpg" style="float: right">
+        <span>Maracara Sleeveless Dress</span>
+        
+      </a>
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\prod2.jpg" style="float: right">
+        <span>Manago Shirt</span>
+        
+      </a>
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\sweaters.jpg" style="float: right">
+        <span>Blue Sweaters</span>
+      </a>
+       <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+      <div><del>$235.00</del> &nbsp;&nbsp; $35.00</div>
+    </li>
+  </ul>
+</div>
