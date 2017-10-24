@@ -74,7 +74,10 @@ export class CheckoutComponent implements OnInit {
     }
     
     alert("Your Order has been confirmed. \n Order will be delivered to your door step please pay cash on delivery");
+    this.router.navigate(['/home']);
   }
+
+  
 
   signup(email, password){
       this.authservice.signup(email, password);

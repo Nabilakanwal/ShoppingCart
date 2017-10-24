@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, NgForm} from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { DbserviceService } from '../../services/dbservice.service';
 // import {  MatToolbarModule, 
 //           MatIconModule, 
@@ -31,7 +33,7 @@ export class AddProductComponent implements OnInit {
     {value: 'Gift-3', viewValue: 'Gifts'}
   ];
 
-  constructor(private dbService : DbserviceService) {
+  constructor(private dbService : DbserviceService,  private router : Router) {
       this.dbService.getProductsList((productsArr)=>{
         this.displayProductsArr = productsArr;
       //  console.log("this.displayProductsArr================>>>>", productsArr);
@@ -46,6 +48,7 @@ export class AddProductComponent implements OnInit {
    onSubmit(formValue) {
     console.log("save product detail: ", formValue);
     this.dbService.saveProduct(formValue);
+    this.router.navigate(['/home']);
     // console.log(form)
   }
 

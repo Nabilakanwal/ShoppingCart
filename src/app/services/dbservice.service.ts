@@ -17,16 +17,34 @@ export class DbserviceService {
       cartRef: AngularFireList<any>;
       cartItems: Observable<any[]>;
       feedBackRef: AngularFireList<any>;
+      // searchData$: FirebaseListObservable<any[]>;
       
 
-  constructor(db: AngularFireDatabase, public afAuth: AngularFireAuth) { 
+  constructor( private db: AngularFireDatabase, public afAuth: AngularFireAuth) { 
         this.user = this.afAuth.authState;   // only triggered on sign-in/out (for old behavior use .idToken)
         this.productRef = db.list('products');
         this.cartRef = db.list('cartItems');
         this.feedBackRef = db.list('customerFeedBack');
+
         
-        // this.getProductsList();
+        
   }
+
+  //search work
+      // searchData$(start, end): FirebaseListObservable<any> {
+      // return this.db.list('/products', {
+      //       query: {
+      //       orderByChild: 'product.pName',
+      //       limitToFirst: 10,
+      //       startAt: start,
+      //       endAt: end
+      //       }
+      // });
+      // }
+    
+
+
+
 
   saveProduct(data) {
         console.log("Going to save in DB");

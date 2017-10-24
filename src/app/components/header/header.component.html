@@ -12,7 +12,7 @@
         </div>
         <div class="setRight">
           <div class="searchContainer">
-            <input  matInput type="search"  placeholder="Search" id="sampleSearchInput" >
+            <input  matInput type="text"  placeholder="Search" id="sampleSearchInput" (keydown)="search($event)" >
             <span class="icon-container"><i class="material-icons">search</i></span>
           </div>
           <div class="accountContainer">
@@ -32,6 +32,20 @@
     
     </mat-toolbar>
   </div>
+
+  <!--search-->
+   
+      <!--<div *ngFor="let product of products">
+        <h4>{{product?.pName}}</h4>
+        
+      </div>
+      <div *ngIf="products?.length < 1">
+        <hr>
+        <p>
+          No results found :(
+        </p>
+      </div>-->
+  <!--search-->
 
   <div class="siteHeader">
     <div class="logoContainer">
