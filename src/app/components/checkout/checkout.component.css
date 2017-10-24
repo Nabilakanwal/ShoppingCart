@@ -6,6 +6,8 @@
     color: white;
     background-color: black;
     padding: 5px;
+    /* position: relative; */
+    /* top: -10px; */
     vertical-align: top;
 }
 .returnCustDiv{
@@ -21,3 +23,86 @@ a.linkStyle{
   text-decoration: none;
   color: #F66249;
 }
+.mat-checkbox-inner-container{
+  width: 16px !important;
+  height: 16px !important;
+}
+.productsLeftBar{
+    margin-top: 35px
+}
+.productsLeftBarSection2{
+    margin-top: 45px
+}
+.prodList{
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+    width: 90%
+}
+.prodList li{
+    line-height: 20px;
+}
+.prodList a{
+   text-decoration: none;
+    color:#2a313e;
+    font-size: 15px;
+}
+.prodList a:hover{
+    color: #F66249;
+}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color: gold;
+
+}
+table.paypal{
+  width: 80%;
+  border-collapse: collapse;
+}
+table.paypal td{
+  width: 
+  50%;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid grey;
+  border-collapse: collapse;
+  
+}
+.theading{
+background-color: grey;
+}
+table.paypal th{
+  border: 1px solid grey;
+  border-collapse: collapse;
+  width: 
+  50%;
+  padding: 10px;
+  text-align: left;
+}
+.rightDiv{
+  width: 65%;display: inline-block;float: left;
+}
+.leftDiv{
+  width: 28%;display: inline-block;
+}
+@media only screen and (max-width: 750px) {
+.rightDiv{
+  width: 100%;
+}
+.leftDiv{
+  width: 100%;
+}
+}
+
+

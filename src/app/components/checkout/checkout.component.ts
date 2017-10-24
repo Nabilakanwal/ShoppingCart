@@ -17,6 +17,8 @@ export class CheckoutComponent implements OnInit {
   public user$ = this.authservice.user;
   checked = false;
   displayPswrdField : Boolean  = false;
+  itemsFromStorage;
+  totalAmount = null;
 
   countries = [
     {value: 'Pakistan-0', viewValue: 'Pakistan'},
@@ -34,14 +36,24 @@ export class CheckoutComponent implements OnInit {
     {value: 'Khyber-3', viewValue: 'Khyber Pakhtunkhwa'}
   ];
 
-  constructor(private authservice : AuthService, private router : Router, private ddbServiceb: DbserviceService) {
+  constructor(private authservice : AuthService, private router : Router, private dbService: DbserviceService) {
     console.log("ChecOut constructor Work");
+    let self = this;
     authservice.isAuthenticated()
                 .subscribe(
                   success => this.isLoggedIn = success
                 );
     
-    
+    //get shoping detail from localstorage
+    self.itemsFromStorage = JSON.parse(localStorage.getItem("itemsArr"));
+    console.log("this.itemsFromStorage",self.itemsFromStorage);
+    if(self.itemsFromStorage){
+            self.itemsFromStorage.forEach(function (value) {
+            self.totalAmount += value.product.pPrice          
+        });
+        console.log("totalAmount", self.totalAmount);
+    }
+
    }
 
   
@@ -52,21 +64,16 @@ export class CheckoutComponent implements OnInit {
 
 
    onSubmitBilling(formValue) {
-    console.log("save Billing detail: ", formValue);
-    console.log("save Billing detail: ", formValue.email);
-    console.log("save Billing detail: ", formValue.password);
-   
+    console.log("save Customer profile  && Billing detail: ", formValue, formValue.email, formValue.password);
+    this.authservice.saveCustomerProfile(formValue); 
+    this.dbService.saveCartItems(this.itemsFromStorage);               
+       
     if(formValue.createAccount){
-      console.log("Save Customer profile && register -->", formValue);      
+      console.log("register Customer -->", formValue);      
       this.signup(formValue.email, formValue.password);
-      this.authservice.saveCustomerProfile(formValue);
     }
-    else{
-      // let savedUser = this.authservice.isAuthenticated();
-      console.log("Just Save Customer profile not register -->", formValue);
-      this.authservice.saveCustomerProfile(formValue);      
-    }
-
+    
+    alert("Your Order has been confirmed. \n Order will be delivered to your door step please pay cash on delivery");
   }
 
   signup(email, password){

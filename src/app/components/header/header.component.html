@@ -25,7 +25,7 @@
           <div class="cartContainer">
             <button class="cartBtn" mat-button routerLink="/cart">
               <mat-icon>shopping_cart</mat-icon>
-              <a href="" >My Cart     - $ 0 </a>
+              <a routerLink="/cart" >My Cart     - $ 0 </a>
             </button>
           </div>
         </div>
@@ -48,13 +48,16 @@
       <mat-toolbar >		     
           <mat-button-toggle-group #group="matButtonToggleGroup" class="menuButtons">		          
               <mat-button-toggle value="home" style="width: 20%;" routerLink="/home">		            
-                Home		                
-              </mat-button-toggle>		              
+                Home		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              
+              </mat-button-toggle>		
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>              
               <mat-button-toggle value="shop" style="width: 20%;" routerLink="/shop">		              
-                Shop		                
-              </mat-button-toggle>		              
+                Shop		      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          
+              </mat-button-toggle>		
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>              
+                            
               <mat-button-toggle value="contact" routerLink="/contact">		              
-                Contact Us		                
+                Contact 		                
               </mat-button-toggle>		             
               <!--<mat-button-toggle value="addproduct" routerLink="/addProduct">		              
                 Add Product		                

@@ -1,7 +1,3 @@
-<p>
-  login works!
-</p>
-
 <mat-card>
     <div>
         <p><a routerLink="/home" style="color: grey" >Home</a> /  <a routerLink="/shop" style="color: grey" >Shop</a>  /  <a routerLink="/myAccount" style="color: grey" >My account</a> </p>        
@@ -33,7 +29,7 @@
       <br/>
       <form class="contact-form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
             <mat-form-field class="example-full-width formInput">
-                <label for="email">Username or Email address</label>
+                <label for="email">Username or email </label>
                     <div><input class="inputCss" matInput type="text" name="lostemail" ngModel required/></div>
             </mat-form-field>
             <br><br>

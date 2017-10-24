@@ -1,15 +1,12 @@
-<p>
-  checkout works!
-</p>
 
-<div style="width: 100%">
-<mat-card style="width: 50%">
-  
+<mat-card style="height: 1500px">
+  <div class="rightDiv">
+<div>
   <h2>CHECKOUT</h2>
       <div class="returnCustDiv">
         <i class="fa fa-user" aria-hidden="true"></i>
         <div style="display: inline-block;margin: -4px 6px;">Returning customer? <br/>
-          <a href="/" class="linkStyle">Click here to login</a>
+          <a routerLink="/myAccount" class="linkStyle">Click here to login</a>
         </div>
         
       </div>
@@ -18,58 +15,50 @@
         <div style="display: inline-block;margin: -4px 6px;">Have a coupon? <br/>
           <a href="/" class="linkStyle"> Click here to enter your code</a>
         </div>
-        
       </div>
-          
-    
-
-</mat-card>
-
- <mat-card class="addProductContainer" style="width: 50%">
-    <mat-card-header>
-      <mat-card-title>
-        <span>Billing details</span>
-      </mat-card-title>
-    </mat-card-header>
-
+</div>
+<div class="addProductContainer">
+    <h2>Billing Details</h2>
     <mat-card-content>
       <form  #authForm="ngForm" (ngSubmit)="onSubmitBilling(authForm.value)">
-        <table  cellspacing="0">
-
-            <tr>
-                <mat-input-container class="full-width">
-                  <input matInput type="text" placeholder="First Name" name="firstName" ngModel
-                        required autofocus firstName>
-                </mat-input-container>
-                  <td>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     </td>
-                <mat-input-container class="full-width">
-                  <input matInput type="text" placeholder="Last Name" name="last_Name" ngModel
-                        required autofocus lastName>
-                </mat-input-container>
-            </tr>
-           
-            <tr>
-                <mat-input-container class="full-width">
-                  <input matInput type="text" placeholder="Company Name" name="companyName" ngModel
-                        required autofocus companyName>
-                </mat-input-container>
-            </tr>
-            <tr>
-                  <mat-form-field>
-                    <mat-select placeholder="Select Country" name="selectedCountry" ngModel>
-                      <mat-option *ngFor="let country of countries" [value]="country.value">
-                        {{ country.viewValue }}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-            </tr>
-           <tr>
-                <mat-input-container class="full-width">
-                  <input matInput type="text" placeholder="Street Address" name="streetAddress" ngModel
-                        required autofocus streetAddress>
-                </mat-input-container>
-            </tr>
-           <tr>
+        <table  cellspacing="0" style="width: 100%">
+          <tr>
+            <td>
+            <mat-input-container class="full-width">
+              <input matInput type="text" placeholder="First Name" name="firstName" ngModel
+                required autofocus firstName>
+              </mat-input-container>
+            </td>
+            <td></td>
+            <td>
+              <mat-input-container class="full-width">
+                <input matInput type="text" placeholder="Last Name" name="last_Name" ngModel
+                    required autofocus lastName>
+              </mat-input-container>
+            </td>
+          </tr>
+          <tr>
+              <mat-input-container class="full-width">
+              <input matInput type="text" placeholder="Company Name" name="companyName" ngModel
+                required autofocus companyName>
+              </mat-input-container>
+          </tr>
+          <tr>
+            <mat-form-field>
+              <mat-select placeholder="Select Country" name="selectedCountry" ngModel>
+                <mat-option *ngFor="let country of countries" [value]="country.value">
+                    {{ country.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </tr>
+          <tr>
+            <mat-input-container class="full-width">
+              <input matInput type="text" placeholder="Street Address" name="streetAddress" ngModel
+                required autofocus streetAddress>
+              </mat-input-container>
+          </tr>
+          <tr>
                 <mat-input-container class="full-width">
                   <input matInput type="text" placeholder="City" name="city" ngModel
                         required autofocus city>
@@ -114,10 +103,205 @@
 
         </table>
 
-        <button class="submit-btn" type="submit" mat-raised-button color="primary" [disabled]="!authForm.form.valid"> Proceed to Payment </button>
+         <h2>Additional Information</h2>
+      <div class="returnCustDiv">
+        <label style="color: grey">Order Notes</label>
+        <md-input-container class="md-block">
+          
+          <textarea placeholder="Notes about your order, e.g. special notes for delivery." md-maxlength="150" rows="5" md-select-on-focus style="width: 100%"></textarea>
+        </md-input-container>
+        
+      </div>
+
+      <div>
+  <h2>Your Order</h2>
+      <table class="paypal">
+        <thead>
+            <tr>
+                <th class="theading" >Product</th>
+                <th class="theading" >Total</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of itemsFromStorage"  >
+            <tr>
+                <td> {{item.product.pName}} </td>
+                <td> {{item.product.pPrice}} </td>
+            </tr>
+           
+        </tbody> 
+         <tr>
+          <th>Subtotal</th>
+          <td>{{totalAmount}}</td>
+        </tr>
+        <tr>
+          <th>Total</th>
+          <td>{{totalAmount}}</td>
+        </tr>    
+        
+       
+        
+      </table>
+      
+</div>
+
+        <br><br><br>
+        <!--<button class="submit-btn" type="submit" mat-raised-button color="primary" [disabled]="!authForm.form.valid">Proceed to Paypal</button>-->
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <button class="submit-btn" type="submit" mat-raised-button color="primary" [disabled]="!authForm.form.valid">Proceed to Payment</button>
         
       </form>
     </mat-card-content>
     
-  </mat-card>
+      </div>
+    <div>
   </div>
+</div>
+
+<!--Left Nav section-->
+<div class="leftDiv">
+<div class="serach_area">
+  <mat-input-container style="width: 95%">
+           <input  matInput type="search" placeholder="Search" id="sampleSearchInput" ngModel />
+  </mat-input-container>
+  <p>
+   <button mat-raised-button color="warn">Search</button>    
+  </p>
+</div>
+<br/>
+<div class="productsLeftBar">
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\prod1.jpg" style="float: right">
+        <span>Marina Style</span>
+        
+      </a>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\prod2.jpg" style="float: right">
+        <span>Amari Shirt</span>
+        
+      </a>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\abaya.jpg" style="float: right">
+        <span>Maracara Sleeveless Dress</span>
+        
+      </a>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\prod2.jpg" style="float: right">
+        <span>Manago Shirt</span>
+        
+      </a>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\sweaters.jpg" style="float: right">
+        <span>Blue Sweaters</span>
+      </a>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+
+
+<div class="productsLeftBarSection2">
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\prod1.jpg" style="float: right">
+        <span>Marina Style</span>
+        
+      </a>
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\prod2.jpg" style="float: right">
+        <span>Amari Shirt</span>
+        
+      </a>
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\abaya.jpg" style="float: right">
+        <span>Maracara Sleeveless Dress</span>
+        
+      </a>
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\prod2.jpg" style="float: right">
+        <span>Manago Shirt</span>
+        
+      </a>
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+      <div>$35.00</div>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul class="prodList">
+    <li>
+      <a href="/">
+        <img width="65" height="43" src="\assets\images\sweaters.jpg" style="float: right">
+        <span>Blue Sweaters</span>
+      </a>
+       <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+      <div><del>$235.00</del> &nbsp;&nbsp; $35.00</div>
+    </li>
+  </ul>
+</div>
+</div>
+</mat-card>
