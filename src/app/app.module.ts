@@ -109,6 +109,10 @@ export const firebaseConfig = {
       {
          path: 'myAccount',
          component: LoginComponent
+      },
+      {
+         path: 'product',
+         component: ProductDetailComponent
       }
     ])
   ],

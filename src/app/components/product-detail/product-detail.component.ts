@@ -10,6 +10,10 @@ export class ProductDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
+  //   this.hero$ = this.route.paramMap
+  //   .switchMap((params: ParamMap) =>
+  //     this.service.getHero(params.get('id')));
+
+   }
 
 }

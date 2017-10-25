@@ -1,46 +1,44 @@
-/*mat-toolbar{
-    background-color:mediumaquamarine;
-    background: radial-gradient(circle, black, white);
-    border: 0.5px solid #b7b5b5;
-}
-
-
-
-.logo-img{
-  width: 90px;
-  margin-right: 30px;
-}
-
-.menuButtons{
-    
-}
-
-.menuButtons > mat-button-toggle{
-    text-align: center;
-    width: 25%;
-}*/
 
 .mat-button-toggle[_ngcontent-c1] {
      color: white !important; 
 }
-.example-selected-value{
-    width: 88%;
-    margin: auto;
-}
+
 .mat-button-toggle[_ngcontent-c1]:hover {
      color: #F66249 !important; 
 }
 .nav-container > mat-button-toggle:hover{
     color:#F66249 !important;
 }
+.nav-container{
+    width: 88%;
+    margin: auto;
+}
 .mat-button-toggle[_ngcontent-c1] {
     background-color: transparent !important;
 }
+.menuHeader{
+    background-color: #25262B;
+}
 .menuButtons{
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 700;
-    padding: 0px 48px 14px 67px;
     box-shadow: none !important;
+    list-style: none;
+    width:80%;
+    margin: auto;
+    border-top: 1px solid #35373e;
+    padding: 0;
+}
+.menuButtons li{
+    display: inline-block;
+    padding: 20px;
+}
+.menuButtons li > a{
+    text-decoration: none;
+    color: white;
+}
+.menuButtons li a:hover{
+    color:  #F66249 !important;
 }
 .headerBox{
     background: #2b2e34;
@@ -69,10 +67,6 @@ topHeaderContainer mat-toolbar{
     height: 30px;
     border-radius: 5px;
 }
-
-/*.searchContainer i{
-        top: 2px;
-}*/
 
 span input i{
     color: #FFF;
@@ -127,8 +121,6 @@ border-right: 1px solid grey;
     text-align: right;
     width: 70%;
     display: inline-block;
-    /*margin-left: auto;
-    padding: 5%;*/
 }
 
 .siteHeader .banner-wide{
@@ -136,9 +128,7 @@ border-right: 1px solid grey;
     border: 2px solid white;
     /*padding: 28%;*/
 }
-/*.logoContainer{
 
-}*/
 .banner-wide{display: none}
 .siteHeader .custom-logo-link {
   display: block;
@@ -171,8 +161,6 @@ mat-button-toggle:click{
 
 }*/
 .cartBtn {
-    /*padding-left: 40px;
-    padding-right: 40px;*/
     background: #F66249;
     line-height: 4em;
     padding-top: -2px;
@@ -266,7 +254,6 @@ a:hover, a:active {
             background: #2b2e34 !important;
             color: #FFF;
             vertical-align: middle;
-            /* height: 54px; */
             display: inline-block;
 }
 

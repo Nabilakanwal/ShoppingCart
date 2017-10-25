@@ -115,7 +115,7 @@ body{
 }
 @media only screen and (max-width: 750px) {
     
-    .advertise_container,.advertise_container2,.advertise_container3{
+    .advertise_container,.advertise_container2,.advertise_container3, .mainSliderInfo{
         display: none !important;
     }
     .example-card{
